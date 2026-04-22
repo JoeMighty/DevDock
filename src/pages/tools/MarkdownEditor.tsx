@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import TurndownService from 'turndown';
+// @ts-expect-error
+import { gfm } from 'turndown-plugin-gfm';
 import { FileEdit, Bold, Italic, Heading, Strikethrough, Code, Link as LinkIcon, Image, List, ListOrdered, TableProperties, ArrowRightLeft } from 'lucide-react';
 
 export default function MarkdownEditor() {
@@ -15,6 +17,7 @@ export default function MarkdownEditor() {
 
   // Initialize Turndown
   const turndownService = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' });
+  turndownService.use(gfm);
 
   useEffect(() => {
      if (mode === 'richToMd') {
@@ -67,7 +70,7 @@ export default function MarkdownEditor() {
           if (type === 'UL') document.execCommand('insertUnorderedList', false);
           if (type === 'OL') document.execCommand('insertOrderedList', false);
           if (type === 'TABLE') {
-             document.execCommand('insertHTML', false, `<table border="1"><tr><td>Col 1</td><td>Col 2</td></tr><tr><td>Data 1</td><td>Data 2</td></tr></table><br/>`);
+             document.execCommand('insertHTML', false, `<table border="1"><thead><tr><th>Col 1</th><th>Col 2</th></tr></thead><tbody><tr><td>Data 1</td><td>Data 2</td></tr></tbody></table><br/>`);
           }
           if (editableRef.current) setRichHtml(editableRef.current.innerHTML);
       }
