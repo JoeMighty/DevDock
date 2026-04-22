@@ -13,6 +13,10 @@ import RegexTester from '@/pages/tools/RegexTester';
 import CronGenerator from '@/pages/tools/CronGenerator';
 import EncoderDecoder from '@/pages/tools/EncoderDecoder';
 import ColorChecker from '@/pages/tools/ColorChecker';
+import MarkdownEditor from '@/pages/tools/MarkdownEditor';
+import HashGenerator from '@/pages/tools/HashGenerator';
+import HtmlToJsx from '@/pages/tools/HtmlToJsx';
+import MockData from '@/pages/tools/MockData';
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
           <Route path="/tools/cron" element={<CronGenerator />} />
           <Route path="/tools/encoder" element={<EncoderDecoder />} />
           <Route path="/tools/color" element={<ColorChecker />} />
+          <Route path="/tools/markdown" element={<MarkdownEditor />} />
+          <Route path="/tools/hash" element={<HashGenerator />} />
+          <Route path="/tools/html-to-jsx" element={<HtmlToJsx />} />
+          <Route path="/tools/mock-data" element={<MockData />} />
         </Routes>
       </AppLayout>
     </Router>

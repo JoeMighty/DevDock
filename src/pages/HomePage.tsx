@@ -33,7 +33,7 @@ export default function HomePage() {
         variants={containerVariants} 
         initial="hidden" 
         animate="show" 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr max-w-7xl mx-auto w-full"
       >
         {TOOLS.map((tool) => {
           const Icon = tool.icon;
@@ -41,21 +41,21 @@ export default function HomePage() {
             <motion.div key={tool.path} variants={itemVariants} className="h-full">
               <Link 
                 to={tool.path}
-                className="group relative flex flex-col h-full overflow-hidden p-6 bg-card/40 backdrop-blur-sm border border-white/5 rounded-2xl hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.15)] hover:-translate-y-1"
+                className="group relative flex flex-col h-full overflow-hidden p-5 bg-card/40 backdrop-blur-sm border border-white/5 rounded-xl hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] hover:-translate-y-1"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
-                  <Icon className="w-6 h-6 text-white group-hover:text-primary drop-shadow-md" />
+                <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
+                  <Icon className="w-5 h-5 text-white group-hover:text-primary drop-shadow-md" />
                 </div>
                 
-                <h3 className="font-bold text-xl mb-2 text-white/90 group-hover:text-white transition-colors">{tool.name}</h3>
-                <p className="text-muted-foreground text-sm font-medium leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
-                   Launch the {tool.name.toLowerCase()} interface instantly.
+                <h3 className="font-bold text-base mb-1.5 text-white/90 group-hover:text-white transition-colors">{tool.name}</h3>
+                <p className="text-muted-foreground text-xs font-medium leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+                   Launch the {tool.name.toLowerCase()} interface.
                 </p>
                 
-                <div className="mt-auto pt-6 flex items-center text-sm font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                  Open Engine <ArrowRight className="w-4 h-4 ml-1.5" />
+                <div className="mt-auto pt-4 flex items-center text-xs font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                  Open Engine <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </div>
               </Link>
             </motion.div>

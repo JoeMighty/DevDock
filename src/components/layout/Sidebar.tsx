@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 export const TOOLS = [
   { name: 'JSON to Table', path: '/tools/json-to-table', icon: FileJson },
   { name: 'API Tester', path: '/tools/api-tester', icon: Network },
+  { name: 'HTML to JSX', path: '/tools/html-to-jsx', icon: Code2 },
+  { name: 'Mock Data Gen', path: '/tools/mock-data', icon: DatabaseZap },
+  { name: 'Markdown Editor', path: '/tools/markdown', icon: FileEdit },
+  { name: 'Hash & UUID', path: '/tools/hash', icon: Hash },
   { name: 'JWT Decoder', path: '/tools/jwt', icon: Key },
   { name: 'Regex Tester', path: '/tools/regex', icon: Regex },
   { name: 'Cron Gen', path: '/tools/cron', icon: Clock },
