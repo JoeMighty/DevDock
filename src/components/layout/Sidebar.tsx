@@ -1,26 +1,35 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 export const TOOLS = [
-  { name: 'JSON to Table', path: '/tools/json-to-table', icon: FileJson },
-  { name: 'API Tester', path: '/tools/api-tester', icon: Network },
-  { name: 'HTML to JSX', path: '/tools/html-to-jsx', icon: Code2 },
-  { name: 'Mock Data Gen', path: '/tools/mock-data', icon: DatabaseZap },
-  { name: 'Markdown Editor', path: '/tools/markdown', icon: FileEdit },
-  { name: 'Hash & UUID', path: '/tools/hash', icon: Hash },
-  { name: 'JWT Decoder', path: '/tools/jwt', icon: Key },
-  { name: 'Regex Tester', path: '/tools/regex', icon: Regex },
-  { name: 'Cron Gen', path: '/tools/cron', icon: Clock },
-  { name: 'Encoder/Decoder', path: '/tools/encoder', icon: FileCode2 },
-  { name: 'Color Checker', path: '/tools/color', icon: Palette },
-  { name: 'Changelog Gen', path: '/tools/changelog', icon: GitCommit },
-  { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush },
-  { name: 'Schema Designer', path: '/tools/schema', icon: Database },
-  { name: 'Sitemap Gen', path: '/tools/sitemap', icon: Network },
-  { name: 'Uptime Monitor', path: '/tools/uptime', icon: Clock },
+  // Data & Text
+  { name: 'JSON to Table', path: '/tools/json-to-table', icon: FileJson, category: 'Data & Text' },
+  { name: 'HTML to JSX', path: '/tools/html-to-jsx', icon: Code2, category: 'Data & Text' },
+  { name: 'Mock Data Gen', path: '/tools/mock-data', icon: DatabaseZap, category: 'Data & Text' },
+  { name: 'Markdown Editor', path: '/tools/markdown', icon: FileEdit, category: 'Data & Text' },
+  { name: 'Encoder/Decoder', path: '/tools/encoder', icon: FileCode2, category: 'Data & Text' },
+  // Web & Network
+  { name: 'API Tester', path: '/tools/api-tester', icon: Network, category: 'Web & Network' },
+  { name: 'Sitemap Gen', path: '/tools/sitemap', icon: Network, category: 'Web & Network' },
+  { name: 'Uptime Monitor', path: '/tools/uptime', icon: Clock, category: 'Web & Network' },
+  { name: 'Cron Gen', path: '/tools/cron', icon: Clock, category: 'Web & Network' },
+  // Dev Tools
+  { name: 'Regex Tester', path: '/tools/regex', icon: Regex, category: 'Dev Tools' },
+  { name: 'Changelog Gen', path: '/tools/changelog', icon: GitCommit, category: 'Dev Tools' },
+  { name: 'Schema Designer', path: '/tools/schema', icon: Database, category: 'Dev Tools' },
+  // Security
+  { name: 'JWT Decoder', path: '/tools/jwt', icon: Key, category: 'Security' },
+  { name: 'Hash & UUID', path: '/tools/hash', icon: Hash, category: 'Security' },
+  { name: 'Password Analyzer', path: '/tools/password', icon: ShieldCheck, category: 'Security' },
+  { name: 'Log Sanitizer', path: '/tools/sanitizer', icon: ShieldAlert, category: 'Security' },
+  { name: 'CIDR Calculator', path: '/tools/cidr', icon: Shield, category: 'Security' },
+  { name: 'PEM Decoder', path: '/tools/pem', icon: ShieldHalf, category: 'Security' },
+  // Design & CSS
+  { name: 'Color Checker', path: '/tools/color', icon: Palette, category: 'Design & CSS' },
+  { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush, category: 'Design & CSS' },
 ];
 
 export function Sidebar() {

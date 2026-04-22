@@ -17,6 +17,10 @@ import MarkdownEditor from '@/pages/tools/MarkdownEditor';
 import HashGenerator from '@/pages/tools/HashGenerator';
 import HtmlToJsx from '@/pages/tools/HtmlToJsx';
 import MockData from '@/pages/tools/MockData';
+import PasswordAnalyzer from '@/pages/tools/PasswordAnalyzer';
+import CidrCalculator from '@/pages/tools/CidrCalculator';
+import LogSanitizer from '@/pages/tools/LogSanitizer';
+import PemDecoder from '@/pages/tools/PemDecoder';
 
 function App() {
   return (
@@ -40,6 +44,10 @@ function App() {
           <Route path="/tools/hash" element={<HashGenerator />} />
           <Route path="/tools/html-to-jsx" element={<HtmlToJsx />} />
           <Route path="/tools/mock-data" element={<MockData />} />
+          <Route path="/tools/password" element={<PasswordAnalyzer />} />
+          <Route path="/tools/cidr" element={<CidrCalculator />} />
+          <Route path="/tools/sanitizer" element={<LogSanitizer />} />
+          <Route path="/tools/pem" element={<PemDecoder />} />
         </Routes>
       </AppLayout>
     </Router>
