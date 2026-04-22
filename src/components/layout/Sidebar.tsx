@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, GitBranch } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
@@ -50,7 +50,7 @@ export function Sidebar() {
         <div className="text-xs font-bold text-muted-foreground/80 mb-3 px-3 uppercase tracking-widest">
           Toolkit
         </div>
-        <nav className="flex flex-col gap-1.5">
+        <nav className="flex flex-col gap-1.5 pb-20">
           {TOOLS.map((tool) => {
             const isActive = location.pathname === tool.path;
             const Icon = tool.icon;
@@ -74,6 +74,18 @@ export function Sidebar() {
             );
           })}
         </nav>
+      </div>
+
+      <div className="mt-auto px-6 pb-6 pt-4 border-t border-border/40 bg-background/50 backdrop-blur-md sticky bottom-0 z-10 w-full">
+         <a 
+            href="https://github.com/JoeMighty/DevDock" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50 group"
+         >
+            <GitBranch className="w-5 h-5 group-hover:text-primary transition-colors" />
+            <span className="font-semibold">GitHub Repo</span>
+         </a>
       </div>
     </aside>
   );
