@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="./public/icons.svg" alt="DevDock Logo" width="100"/>
   <h1>🚀 DevDock</h1>
   <p><strong>Your centralized, lightning-fast developer toolkit.</strong></p>
 
@@ -11,8 +10,6 @@
     <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=plastic&logo=framer&logoColor=white" alt="Framer Motion" />
     <img src="https://img.shields.io/badge/Convex-FF714A?style=plastic&logo=convex&logoColor=white" alt="Convex" />
   </p>
-
-  <br />
 </div>
 
 ## ✨ Overview
