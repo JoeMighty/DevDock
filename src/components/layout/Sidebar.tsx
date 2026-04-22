@@ -1,8 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, GitBranch } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.34 6-1.53 6-6.76a5.2 5.2 0 0 0-1.5-3.8 5.6 5.6 0 0 0-.1-3.8s-1.2-.3-3.9 1.5a13.3 13.3 0 0 0-7 0c-2.7-1.8-3.9-1.5-3.9-1.5a5.6 5.6 0 0 0-.1 3.8A5.2 5.2 0 0 0 3 11c0 5.2 3 6.4 6 6.76-.8.8-1 2-1 3.24v4" />
+    <path d="M4 19c-2-1-2-4-5-4" />
+  </svg>
+);
 
 export const TOOLS = [
   // Data & Text
@@ -83,7 +90,7 @@ export function Sidebar() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50 group"
          >
-            <GitBranch className="w-5 h-5 group-hover:text-primary transition-colors" />
+            <GithubIcon className="w-5 h-5 group-hover:text-primary transition-colors" />
             <span className="font-semibold">GitHub Repo</span>
          </a>
       </div>
