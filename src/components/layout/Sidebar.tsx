@@ -38,7 +38,7 @@ export function Sidebar() {
   return (
     <aside className="w-64 border-r border-border/40 bg-background/30 backdrop-blur-xl h-full flex-shrink-0 flex flex-col pt-6 overflow-y-auto shadow-2xl z-20">
       <div className="px-6 pb-6 border-b border-border/40 mb-6">
-        <Link to="/" className="flex items-center gap-3 font-extrabold text-2xl text-white tracking-tight hover:opacity-80 transition-opacity">
+        <Link to="/" className="flex items-center gap-3 font-extrabold text-2xl text-foreground tracking-tight hover:opacity-80 transition-opacity">
           <div className="bg-gradient-to-br from-primary to-purple-600 p-2 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
             <LayoutDashboard className="w-5 h-5 text-white" />
           </div>
@@ -68,8 +68,8 @@ export function Sidebar() {
                     <div className="absolute inset-0 bg-muted/0 group-hover:bg-muted/30 transition-colors rounded-lg -z-10" />
                 )}
                 
-                <Icon className={cn("w-4 h-4 transition-colors", isActive ? "text-primary" : "text-muted-foreground group-hover:text-white")} />
-                <span className={cn("transition-colors", isActive ? "text-white font-semibold" : "text-muted-foreground group-hover:text-white")}>{tool.name}</span>
+                <Icon className={cn("w-4 h-4 transition-colors", isActive ? "text-primary flex-shrink-0" : "text-muted-foreground group-hover:text-foreground flex-shrink-0")} />
+                <span className={cn("transition-colors truncate", isActive ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground")}>{tool.name}</span>
               </Link>
             );
           })}
