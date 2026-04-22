@@ -70,6 +70,9 @@ ${urls.map(u => `  <url>\n    <loc>${u}</loc>\n    <lastmod>${new Date().toISOSt
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Network className="w-6 h-6 text-primary" /> Sitemap Generator</h2>
       </div>
+      <p className="text-sm text-muted-foreground/80 mb-2">
+        Dynamically crawl URLs and build ready-to-download robust XML files perfect for improving SEO.
+      </p>
 
       <div className="border border-border bg-card rounded-xl shadow-sm p-4 flex gap-4">
         <input 

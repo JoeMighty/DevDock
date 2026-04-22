@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="./public/icons.svg" alt="DevDock Logo" width="100"/>
+  <h1>🚀 DevDock</h1>
+  <p><strong>Your centralized, lightning-fast developer toolkit.</strong></p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <p>
+    <img src="https://img.shields.io/badge/Vite-B73BFE?style=plastic&logo=vite&logoColor=FFD62E" alt="Vite" />
+    <img src="https://img.shields.io/badge/React-20232A?style=plastic&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=plastic&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=plastic&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=plastic&logo=framer&logoColor=white" alt="Framer Motion" />
+    <img src="https://img.shields.io/badge/Convex-FF714A?style=plastic&logo=convex&logoColor=white" alt="Convex" />
+  </p>
 
-Currently, two official plugins are available:
+  <br />
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Overview
 
-## React Compiler
+**DevDock** is a web-based platform that provides an essential collection of developer tools in one beautifully unified, client-side interface. Stop relying on slow, ad-ridden web apps or opening twenty different tabs for your daily workflow. Everything inside DevDock runs instantly, entirely in your browser, with zero backend latency for the core tools.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Designed with a premium SaaS-like deep space aesthetic, DevDock acts as your personal command center.
 
-## Expanding the ESLint configuration
+## 🧰 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+DevDock comes packed with 12 distinct tools:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **JSON to Table**: Instantly visualize, traverse, and export raw JSON to CSV.
+- **API Request Tester**: Fire standard HTTP requests, modify headers and bodies, with built-in history.
+- **JWT Decoder**: Paste a JSON Web Token to extract the header and payload safely offline.
+- **Regex Tester**: Live visual highlighting for Javascript Regular Expressions.
+- **Cron Schedule Generator**: Build complex cron combinations visually instead of memorizing syntax.
+- **Encoder / Decoder**: Securely perform bidirectional string transformations like Base64 or URL encoding.
+- **Color Contrast Checker**: Verify WCAG (AA/AAA) color compliance mathematically.
+- **Changelog Generator**: Construct standard Markdown changelogs effortlessly.
+- **CSS Generator**: Visually tweak linear gradients and box-shadow variables and copy the raw output.
+- **Database Schema Designer**: Build visual SQL tables and quickly compile raw code definitions.
+- **Sitemap Generator**: Dynamically traverse URLs to auto-generate ready-to-deploy XML structures.
+- **Uptime Monitor**: Visually check and persist realtime latency metrics for critical endpoints.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The magic behind DevDock is that it is primarily a **Single Page Application** and runs strictly inside the browser. Currently, there is an initial groundwork for a Convex BaaS server if persistent cloud features are needed, but the MVP is fully functional statically.
+
+### Installation
+
+```bash
+git clone https://github.com/JoeMighty/DevDock.git
+cd DevDock
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Running Locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Deployment
+
+This app is optimized for seamless deployment to **GitHub Pages**. Simply run the following command to build and automatically push the `gh-pages` branch:
+
+```bash
+npm run build
+npx gh-pages -d dist
 ```

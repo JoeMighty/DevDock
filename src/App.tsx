@@ -8,6 +8,11 @@ import CssGenerator from '@/pages/tools/CssGenerator';
 import SchemaDesigner from '@/pages/tools/SchemaDesigner';
 import SitemapGenerator from '@/pages/tools/SitemapGenerator';
 import UptimeMonitor from '@/pages/tools/UptimeMonitor';
+import JwtDecoder from '@/pages/tools/JwtDecoder';
+import RegexTester from '@/pages/tools/RegexTester';
+import CronGenerator from '@/pages/tools/CronGenerator';
+import EncoderDecoder from '@/pages/tools/EncoderDecoder';
+import ColorChecker from '@/pages/tools/ColorChecker';
 
 function App() {
   return (
@@ -22,6 +27,11 @@ function App() {
           <Route path="/tools/schema" element={<SchemaDesigner />} />
           <Route path="/tools/sitemap" element={<SitemapGenerator />} />
           <Route path="/tools/uptime" element={<UptimeMonitor />} />
+          <Route path="/tools/jwt" element={<JwtDecoder />} />
+          <Route path="/tools/regex" element={<RegexTester />} />
+          <Route path="/tools/cron" element={<CronGenerator />} />
+          <Route path="/tools/encoder" element={<EncoderDecoder />} />
+          <Route path="/tools/color" element={<ColorChecker />} />
         </Routes>
       </AppLayout>
     </Router>

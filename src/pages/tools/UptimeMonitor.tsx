@@ -97,6 +97,9 @@ export default function UptimeMonitor() {
         <h2 className="text-2xl font-bold flex items-center gap-2"><Clock className="w-6 h-6 text-primary" /> Uptime Monitor (Client-side Demo)</h2>
         <button onClick={checkAll} className="px-4 py-2 bg-muted text-foreground rounded-md shadow-sm hover:bg-muted/80 transition-colors font-medium text-sm flex items-center gap-2"><RefreshCw className="w-4 h-4"/> Check All</button>
       </div>
+      <p className="text-sm text-muted-foreground/80 mb-2">
+        Ping internal and external endpoints. A sleek dashboard visualizing response times and uptime persistence.
+      </p>
 
       <div className="border border-border bg-card rounded-xl shadow-sm p-4 flex flex-col md:flex-row gap-4">
         <input 

@@ -83,6 +83,9 @@ export default function ApiTester() {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">API Tester</h2>
       </div>
+      <p className="text-sm text-muted-foreground/80 mb-2">
+        Test API endpoints directly from your browser. Set custom headers, bodies, methods, and view your history.
+      </p>
 
       <div className="border border-border bg-card rounded-xl shadow-sm p-4 flex gap-4">
         <select 

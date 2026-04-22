@@ -49,6 +49,9 @@ export default function ChangelogGenerator() {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold flex items-center gap-2"><GitBranch className="w-6 h-6 text-primary" /> Changelog Generator</h2>
       </div>
+      <p className="text-sm text-muted-foreground/80 mb-2">
+        Generate formatted markdown changelogs with standard categorized release notes in seconds.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 overflow-hidden">
         

@@ -29,6 +29,9 @@ export default function CssGenerator() {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Paintbrush className="w-6 h-6 text-primary" /> CSS Generator</h2>
       </div>
+      <p className="text-sm text-muted-foreground/80 mb-2">
+        Visually design and generate CSS string variables for gorgeous gradients and complex box shadows.
+      </p>
 
       <div className="flex gap-4 border-b border-border">
         <button 
