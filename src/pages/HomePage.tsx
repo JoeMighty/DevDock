@@ -30,7 +30,7 @@ export default function HomePage() {
     : TOOLS.filter(t => t.category === activeCategory);
 
   return (
-    <div className="h-full flex flex-col pt-8 overflow-hidden">
+    <div className="min-h-full flex flex-col pt-4 sm:pt-8 pb-12">
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 flex flex-col items-center text-center">
         <h1 className="text-5xl font-extrabold tracking-tight mb-4 pb-2 leading-normal text-transparent bg-clip-text bg-gradient-to-br from-white to-white/50">
           Supercharge your workflow.
