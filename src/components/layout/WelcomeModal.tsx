@@ -30,11 +30,11 @@ export function WelcomeModal() {
             onClick={close}
           />
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-40%" }}
+            animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+            exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-40%" }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg bg-card border border-border/50 shadow-2xl rounded-2xl overflow-hidden"
+            className="fixed left-1/2 top-1/2 z-50 w-full max-w-lg bg-card border border-border/50 shadow-2xl rounded-2xl overflow-hidden"
           >
             <div className="relative p-6 sm:p-8">
               <button onClick={close} className="absolute right-4 top-4 p-2 text-muted-foreground hover:text-foreground bg-muted/20 hover:bg-muted/50 rounded-full transition"><X className="w-4 h-4"/></button>
@@ -52,8 +52,8 @@ export function WelcomeModal() {
                  <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-sm">7 Essential Tools built-in</div>
-                      <div className="text-xs text-muted-foreground">From API testing to generating schema diagrams.</div>
+                      <div className="font-semibold text-sm">16 Essential Tools built-in</div>
+                      <div className="text-xs text-muted-foreground">From API testing and advanced Hash generation to generating schema diagrams.</div>
                     </div>
                  </div>
                  <div className="flex items-start gap-3">
