@@ -151,24 +151,5 @@ npx gh-pages -d dist
 
 ## 📦 Changelog
 
-### v1.6.0
-- ✨ **Password Generator** — `crypto.getRandomValues()` based, configurable charset/length, bulk mode, strength bar
-- ✨ **Gradient Builder** — visual linear/radial/conic builder with colour stop editor, presets, live preview
-- ✨ **JSON Schema Validator** — Ajv Draft-07 validation with path-level error reporting
-- ✨ **robots.txt Generator** — per-bot rules, presets (Block GPTBot, SEO Friendly, Allow All), download
-- ✨ **HMAC Calculator** — HMAC-SHA256/512/1/MD5, hex + base64 output, webhook use case reference
+Full version history is in [CHANGELOG.md](./CHANGELOG.md).
 
-### v1.5.0
-- ✨ **Companion Tool Network** — 13 contextual cross-links between related tools
-- ✨ **localStorage Persistence** — user preferences saved across sessions for 10 key tools
-- ✨ **Clear saved memory** — one-click wipe of all stored preferences from sidebar
-
-### v1.4.0
-- ✨ Conventional Commits Builder, Semver Calculator, ENV Formatter, Color Palette Generator, OTP Generator, XML Formatter (6 new tools)
-- ✨ "New" pill badges on cards — newest 4 tools float to top of homepage grid
-
-### v1.3.0
-- ✨ YAML ↔ JSON, Text Diff, .gitignore Generator, curl → Fetch, CSS Unit Converter (5 new tools)
-
-### v1.2.0
-- ✨ CSV ↔ JSON, SQL Formatter, String Toolkit, Lorem Ipsum, URL Parser, QR Code Designer, HTTP Status Codes, UUID Generator, Timestamp Converter, Number Base Converter (10 new tools)
