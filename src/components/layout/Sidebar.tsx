@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { version } from '../../../package.json';
@@ -25,6 +25,8 @@ export const TOOLS = [
   { name: 'SQL Formatter', path: '/tools/sql', icon: DatabaseZap, category: 'Data & Text' },
   { name: 'String Toolkit', path: '/tools/strings', icon: CaseSensitive, category: 'Data & Text' },
   { name: 'Lorem Ipsum', path: '/tools/lorem', icon: AlignLeft, category: 'Data & Text' },
+  { name: 'YAML ↔ JSON', path: '/tools/yaml', icon: ArrowLeftRight, category: 'Data & Text' },
+  { name: 'Text Diff', path: '/tools/text-diff', icon: GitCompare, category: 'Data & Text' },
 
   // Web & Network
   { name: 'API Tester', path: '/tools/api-tester', icon: Network, category: 'Web & Network' },
@@ -55,10 +57,13 @@ export const TOOLS = [
   { name: 'UUID / Nano ID', path: '/tools/uuid', icon: Dices, category: 'Dev Tools' },
   { name: 'Timestamp Conv.', path: '/tools/timestamp', icon: CalendarClock, category: 'Dev Tools' },
   { name: 'Number Base', path: '/tools/number-base', icon: Binary, category: 'Dev Tools' },
+  { name: '.gitignore Gen', path: '/tools/gitignore', icon: GitBranch, category: 'Dev Tools' },
+  { name: 'curl → Fetch', path: '/tools/curl', icon: Terminal, category: 'Dev Tools' },
 
   // Design & CSS
   { name: 'Color Checker', path: '/tools/color', icon: Palette, category: 'Design & CSS' },
   { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush, category: 'Design & CSS' },
+  { name: 'CSS Units', path: '/tools/css-units', icon: Ruler, category: 'Design & CSS' },
 ];
 
 export function Sidebar() {

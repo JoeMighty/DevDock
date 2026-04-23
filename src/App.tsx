@@ -41,6 +41,13 @@ import UuidGenerator from '@/pages/tools/UuidGenerator';
 import TimestampConverter from '@/pages/tools/TimestampConverter';
 import NumberBaseConverter from '@/pages/tools/NumberBaseConverter';
 
+// v1.3.0 Tools
+import YamlJsonConverter from '@/pages/tools/YamlJsonConverter';
+import TextDiff from '@/pages/tools/TextDiff';
+import GitignoreGenerator from '@/pages/tools/GitignoreGenerator';
+import CurlConverter from '@/pages/tools/CurlConverter';
+import CssUnitConverter from '@/pages/tools/CssUnitConverter';
+
 function App() {
   return (
     <Router>
@@ -84,6 +91,12 @@ function App() {
           <Route path="/tools/uuid" element={<UuidGenerator />} />
           <Route path="/tools/timestamp" element={<TimestampConverter />} />
           <Route path="/tools/number-base" element={<NumberBaseConverter />} />
+
+          <Route path="/tools/yaml" element={<YamlJsonConverter />} />
+          <Route path="/tools/text-diff" element={<TextDiff />} />
+          <Route path="/tools/gitignore" element={<GitignoreGenerator />} />
+          <Route path="/tools/curl" element={<CurlConverter />} />
+          <Route path="/tools/css-units" element={<CssUnitConverter />} />
         </Routes>
       </AppLayout>
     </Router>
