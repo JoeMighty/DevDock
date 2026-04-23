@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { version } from '../../../package.json';
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -190,7 +191,7 @@ export function Sidebar() {
       </div>
 
       <div className="mt-auto px-6 pb-6 pt-4 border-t border-border/40 bg-background/50 backdrop-blur-md sticky bottom-0 z-10 w-full">
-         <a 
+          <a 
             href="https://github.com/JoeMighty/DevDock" 
             target="_blank" 
             rel="noopener noreferrer"
@@ -199,6 +200,10 @@ export function Sidebar() {
             <GithubIcon className="w-5 h-5 group-hover:text-primary transition-colors" />
             <span className="font-semibold">GitHub Repo</span>
          </a>
+         <div className="flex items-center justify-between px-3 pt-1">
+           <span className="text-[10px] font-mono text-muted-foreground/50 tracking-widest">v{version}</span>
+           <span className="text-[10px] text-muted-foreground/40 font-semibold">{TOOLS.length} tools</span>
+         </div>
       </div>
     </aside>
   );
