@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Copy, Download, GitBranch } from 'lucide-react';
+import { Copy, Download, GitBranch, Tag, GitCommit } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 export default function ChangelogGenerator() {
   const [logs, setLogs] = useState([{ type: 'Added', description: '' }]);
@@ -49,9 +50,15 @@ export default function ChangelogGenerator() {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold flex items-center gap-2"><GitBranch className="w-6 h-6 text-primary" /> Changelog Generator</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-2">
+      <p className="text-sm text-muted-foreground/80">
         Generate formatted markdown changelogs with standard categorized release notes in seconds.
       </p>
+      <CompanionTool to="/tools/commits" icon={GitCommit} accent="blue"
+        title="Pair with Conventional Commits"
+        description="Build spec-compliant commit messages first, then document the release here." />
+      <CompanionTool to="/tools/semver" icon={Tag} accent="yellow"
+        title="Pair with Semver Calculator"
+        description="Calculate the correct version bump before writing the changelog entry." />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 overflow-hidden">
         

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Hash, Copy, RefreshCw } from 'lucide-react';
+import { Hash, Copy, RefreshCw, Fingerprint } from 'lucide-react';
 import CryptoJS from 'crypto-js';
+import { CompanionTool } from '@/components/CompanionTool';
 import bcrypt from 'bcryptjs';
 
 export default function HashGenerator() {
@@ -52,9 +53,12 @@ export default function HashGenerator() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Hash className="w-6 h-6 text-primary" /> Hash & UUID Generator</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-4">
+      <p className="text-sm text-muted-foreground/80">
         Instantly calculate MD5 and SHA digests, generate secure saled Bcrypt password hashes, or bulk-generate UUIDv4 strings.
       </p>
+      <CompanionTool to="/tools/bcrypt" icon={Fingerprint} accent="purple"
+        title="Pair with Bcrypt Verifier"
+        description="Generate a Bcrypt hash above, then verify it against a plain-text password in the verifier." />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-[400px]">
           <div className="flex flex-col gap-6 bg-card border border-border rounded-3xl shadow-sm p-6">

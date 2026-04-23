@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Tag, Copy } from 'lucide-react';
+import { Tag, Copy, GitBranch } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 function parseSemver(raw: string): { major: number; minor: number; patch: number; pre: string; build: string } | null {
   const m = raw.trim().replace(/^v/, '').match(/^(\d+)\.(\d+)\.(\d+)(?:-([^+]+))?(?:\+(.+))?$/);
@@ -48,6 +49,9 @@ export default function SemverCalculator() {
       <p className="text-sm text-muted-foreground/80">
         Parse a semantic version string and calculate the next <code className="font-mono text-primary bg-primary/10 px-1 rounded">major</code>, <code className="font-mono text-primary bg-primary/10 px-1 rounded">minor</code>, or <code className="font-mono text-primary bg-primary/10 px-1 rounded">patch</code> bump, including pre-release variants.
       </p>
+      <CompanionTool to="/tools/changelog" icon={GitBranch} accent="green"
+        title="Then write the Changelog"
+        description="Once you've decided the next version, document the release notes in Changelog Generator." />
 
       <div className="bg-card border border-border rounded-xl p-5 shadow-sm">
         <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest block mb-2">Current Version</label>

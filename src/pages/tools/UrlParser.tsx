@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link2, Copy, Plus, X, ExternalLink } from 'lucide-react';
+import { Link2, Copy, Plus, X, ExternalLink, QrCode, Play } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 export default function UrlParser() {
   const [rawUrl, setRawUrl] = useState('https://api.example.com/v2/users/search?name=Alice&role=admin&page=1#results');
@@ -39,6 +40,12 @@ export default function UrlParser() {
       <p className="text-sm text-muted-foreground/80">
         Decompose any URL into its components and visually edit query parameters. Great for debugging OAuth callbacks, redirect URIs, and API endpoints.
       </p>
+      <CompanionTool to="/tools/qr-code" icon={QrCode} accent="purple"
+        title="Turn it into a QR Code"
+        description="Copy the built URL and generate a custom branded QR code in the QR Code Designer." />
+      <CompanionTool to="/tools/api-tester" icon={Play} accent="blue"
+        title="Test the endpoint in API Tester"
+        description="Fire a direct HTTP request to the built URL and inspect the live response." />
 
       <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm focus-within:border-primary/50 transition-colors">
         <div className="text-xs font-bold text-muted-foreground uppercase px-4 py-2 bg-muted/30 border-b border-border">Parse a URL</div>

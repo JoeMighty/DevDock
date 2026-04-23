@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Import, UploadCloud, Copy } from 'lucide-react';
+import { Import, UploadCloud, Copy, Key } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 export default function Base64Encoder() {
   const [b64Data, setB64Data] = useState('');
@@ -33,9 +34,12 @@ export default function Base64Encoder() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Import className="w-6 h-6 text-primary" /> Base64 File Encoder</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-4">
+      <p className="text-sm text-muted-foreground/80">
         Drag and drop images, SVGs, or files to directly encode them into Base64 Data URI strings for hard-embedding into HTML/CSS files without assets.
       </p>
+      <CompanionTool to="/tools/jwt" icon={Key} accent="yellow"
+        title="Working with a JWT token?"
+        description="JWTs are Base64URL-encoded. Jump to JWT Decoder to inspect the header and payload directly." />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 min-h-[400px]">
          <div 

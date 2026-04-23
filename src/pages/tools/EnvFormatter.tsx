@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Settings, Copy, Download } from 'lucide-react';
+import { Settings, Copy, Download, Box } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 interface ParsedLine { key: string; value: string; raw: string; isComment: boolean; isBlank: boolean; error?: string }
 
@@ -89,6 +90,9 @@ API_KEY=sk-duplicate-this-is-a-dupe`);
       <p className="text-sm text-muted-foreground/80">
         Paste a <code className="font-mono text-primary bg-primary/10 px-1 rounded">.env</code> file to validate, deduplicate keys, sort alphabetically, and strip comments or blank lines.
       </p>
+      <CompanionTool to="/tools/docker" icon={Box} accent="blue"
+        title="Pair with Docker Compose Builder"
+        description="Once your .env is clean, wire those environment variables into a docker-compose.yml service." />
 
       {/* Stat badges */}
       <div className="flex flex-wrap gap-2">

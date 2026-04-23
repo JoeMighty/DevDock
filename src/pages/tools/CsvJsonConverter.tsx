@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Table2, Copy, RefreshCw, ArrowLeftRight } from 'lucide-react';
+import { Table2, Copy, RefreshCw, ArrowLeftRight, DatabaseZap } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 export default function CsvJsonConverter() {
   const [mode, setMode] = useState<'csv-to-json' | 'json-to-csv'>('csv-to-json');
@@ -63,6 +64,9 @@ export default function CsvJsonConverter() {
       <p className="text-sm text-muted-foreground/80">
         Convert between CSV spreadsheet exports and JSON arrays instantly. Bidirectional — great for database seeding and data exports.
       </p>
+      <CompanionTool to="/tools/mock-data" icon={DatabaseZap} accent="orange"
+        title="Need JSON data to convert? Generate it"
+        description="Build a typed schema and generate a bulk JSON array, then convert it to CSV here." />
 
       <div className="flex gap-2 p-1 bg-muted/30 rounded-lg w-fit border border-border/50">
         {(['csv-to-json', 'json-to-csv'] as const).map(m => (

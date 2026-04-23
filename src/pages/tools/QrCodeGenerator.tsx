@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import QRCodeStyling from 'qr-code-styling';
 import type { DotType, CornerSquareType, CornerDotType } from 'qr-code-styling';
-import { QrCode, Download, Upload, X } from 'lucide-react';
+import { QrCode, Download, Upload, X, Link2 } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type DotStyle = DotType;
@@ -150,6 +151,9 @@ export default function QrCodeGenerator() {
       <p className="text-sm text-muted-foreground/80">
         Design fully custom QR codes. Adjust eye shapes, data dot styles, per-element colour overrides, and embed a logo directly in the centre.
       </p>
+      <CompanionTool to="/tools/url-parser" icon={Link2} accent="blue"
+        title="Build the URL first"
+        description="Use URL Parser & Builder to compose and clean your URL before generating a QR code." />
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-6 flex-1 min-h-0 overflow-y-auto">
 

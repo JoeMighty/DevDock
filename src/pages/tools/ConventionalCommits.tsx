@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { GitCommit, Copy, Check } from 'lucide-react';
+import { GitCommit, Copy, Check, GitBranch } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 const TYPES = [
   { value: 'feat', label: 'feat', desc: 'A new feature', color: 'text-green-400' },
@@ -50,6 +51,9 @@ export default function ConventionalCommits() {
       <p className="text-sm text-muted-foreground/80">
         Build perfectly formatted Conventional Commits messages with guided fields. Outputs the spec-compliant commit string for <code className="font-mono text-primary bg-primary/10 px-1 rounded">feat</code>, <code className="font-mono text-primary bg-primary/10 px-1 rounded">fix</code>, breaking changes, and more.
       </p>
+      <CompanionTool to="/tools/changelog" icon={GitBranch} accent="green"
+        title="Then write the Changelog"
+        description="Once commits are built, jump to Changelog Generator to create the release notes." />
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 flex-1 min-h-0">
         <div className="flex flex-col gap-4 overflow-y-auto pr-1">

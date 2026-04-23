@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Terminal, Copy } from 'lucide-react';
+import { Terminal, Copy, Play } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 type OutputMode = 'fetch' | 'axios';
 
@@ -77,6 +78,9 @@ export default function CurlConverter() {
       <p className="text-sm text-muted-foreground/80">
         Paste a curl command copied from Postman, an API doc, or your terminal. Instantly converts it to clean <code className="font-mono text-primary bg-primary/10 px-1 rounded">fetch()</code> or <code className="font-mono text-primary bg-primary/10 px-1 rounded">axios</code> JavaScript code.
       </p>
+      <CompanionTool to="/tools/api-tester" icon={Play} accent="blue"
+        title="Pair with API Tester"
+        description="Fire the converted request directly and inspect live JSON responses." />
 
       <div className="flex gap-2 p-1 bg-muted/30 rounded-lg w-fit border border-border/50">
         {(['fetch', 'axios'] as OutputMode[]).map(m => (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FileDiff } from 'lucide-react';
+import { FileDiff, GitCompare } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 import ReactDiffViewer from 'react-diff-viewer-continued';
 
 export default function JsonDiff() {
@@ -34,9 +35,12 @@ export default function JsonDiff() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><FileDiff className="w-6 h-6 text-primary" /> JSON Payload Differ</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-4">
+      <p className="text-sm text-muted-foreground/80">
         Paste two JSON objects. They will be strictly formatted and compared via a Git-style dual-pane engine to instantly spotlight line mutations.
       </p>
+      <CompanionTool to="/tools/text-diff" icon={GitCompare} accent="cyan"
+        title="Diffing plain text instead?"
+        description="Switch to Text Diff for general line-level comparison of any two text blocks." />
 
       <div className="grid grid-cols-2 gap-4 h-48 mb-4">
          <div className="flex flex-col h-full bg-card border border-border rounded-xl shadow-sm overflow-hidden p-1 focus-within:border-primary/50 transition-colors">

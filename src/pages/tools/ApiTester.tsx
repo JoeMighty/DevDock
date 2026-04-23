@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Play, RotateCcw, Clock, Trash } from 'lucide-react';
+import { Play, RotateCcw, Clock, Trash, Terminal } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 interface HistoryItem {
   id: string;
@@ -83,9 +84,12 @@ export default function ApiTester() {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">API Tester</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-2">
+      <p className="text-sm text-muted-foreground/80">
         Test API endpoints directly from your browser. Set custom headers, bodies, methods, and view your history.
       </p>
+      <CompanionTool to="/tools/curl" icon={Terminal} accent="cyan"
+        title="Got a curl command? Convert it first"
+        description="Paste any curl command and convert it to clean fetch/axios code before testing here." />
 
       <div className="border border-border bg-card rounded-xl shadow-sm p-4 flex gap-4">
         <select 

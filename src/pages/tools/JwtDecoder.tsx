@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Key } from 'lucide-react';
+import { Key, Import, ShieldHalf } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 export default function JwtDecoder() {
   const [jwt, setJwt] = useState('');
@@ -30,9 +31,15 @@ export default function JwtDecoder() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Key className="w-6 h-6 text-primary" /> JWT Decoder</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-2">
+      <p className="text-sm text-muted-foreground/80">
         Paste a JSON Web Token to instantly decode the header and payload. Safe, secure, entirely offline.
       </p>
+      <CompanionTool to="/tools/base64" icon={Import} accent="yellow"
+        title="Pair with Base64 Encoder"
+        description="JWTs use Base64URL encoding — encode or decode raw file payloads here." />
+      <CompanionTool to="/tools/pem" icon={ShieldHalf} accent="blue"
+        title="Inspect the signing certificate"
+        description="Decode the X.509 PEM certificate used to sign this JWT and view its issuer and expiry." />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1 min-h-[400px]">
         <div className="flex flex-col bg-card border border-border rounded-xl shadow-sm overflow-hidden">

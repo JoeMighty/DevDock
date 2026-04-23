@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ShieldHalf } from 'lucide-react';
+import { ShieldHalf, Key } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 import forge from 'node-forge';
 
 export default function PemDecoder() {
@@ -37,9 +38,12 @@ export default function PemDecoder() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><ShieldHalf className="w-6 h-6 text-primary" /> PEM Decoder</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-2">
+      <p className="text-sm text-muted-foreground/80">
         Input raw Base64 X.509 Certificate PEM blocks to decode securely and directly parse internal issuer details and fingerprints.
       </p>
+      <CompanionTool to="/tools/jwt" icon={Key} accent="purple"
+        title="Validating a JWT?"
+        description="The PEM certificate here is often the signing key for a JWT — decode the token in JWT Decoder." />
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-6 flex-1 min-h-[400px]">
           <textarea 

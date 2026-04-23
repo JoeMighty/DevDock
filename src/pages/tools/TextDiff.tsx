@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { GitCompare } from 'lucide-react';
+import { GitCompare, FileDiff } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 import ReactDiffViewer from 'react-diff-viewer-continued';
 
 export default function TextDiff() {
@@ -39,6 +40,9 @@ Version 1.3.0 is now live.`);
       <p className="text-sm text-muted-foreground/80">
         General-purpose text comparison. Paste any two blocks of text and see exact line-level additions, removals, and changes highlighted in real time.
       </p>
+      <CompanionTool to="/tools/json-diff" icon={FileDiff} accent="cyan"
+        title="Diffing JSON payloads?"
+        description="Switch to JSON Diff for structured comparison with auto-formatting and field-level highlighting." />
 
       <div className="grid grid-cols-2 gap-4 h-48">
         {[

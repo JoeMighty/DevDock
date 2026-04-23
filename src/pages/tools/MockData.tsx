@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { DatabaseZap, Plus, Trash2, Download } from 'lucide-react';
+import { DatabaseZap, Plus, Trash2, Download, FileJson, Table2 } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 type FieldType = 'UUID' | 'Name' | 'Email' | 'Integer' | 'Date' | 'Boolean';
 interface Field { id: string, name: string, type: FieldType }
@@ -56,9 +57,15 @@ export default function MockData() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><DatabaseZap className="w-6 h-6 text-primary" /> Mock Data Generator</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-2">
+      <p className="text-sm text-muted-foreground/80">
         Define schema variable names and data types to instantly generate bulk JSON structures for database seeding or testing.
       </p>
+      <CompanionTool to="/tools/json-to-table" icon={FileJson} accent="blue"
+        title="Visualise with JSON to Table"
+        description="Paste the generated JSON to render it as an interactive sortable table." />
+      <CompanionTool to="/tools/csv-json" icon={Table2} accent="green"
+        title="Export with CSV ↔ JSON"
+        description="Convert the generated JSON array into a CSV spreadsheet in one click." />
 
       <div className="flex flex-col lg:flex-row gap-6 flex-1 min-h-[400px]">
           <div className="flex flex-col gap-4 w-full lg:w-[400px] bg-card border border-border p-5 rounded-2xl shadow-sm h-fit">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { CheckCircle2, ShieldOff, Fingerprint } from 'lucide-react';
+import { CheckCircle2, ShieldOff, Fingerprint, Hash } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 import bcrypt from 'bcryptjs';
 
 export default function BcryptVerifier() {
@@ -22,9 +23,12 @@ export default function BcryptVerifier() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Fingerprint className="w-6 h-6 text-primary" /> Bcrypt Hash Verifier</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-6">
+      <p className="text-sm text-muted-foreground/80">
         Safely cross-verify heavily salted Bcrypt hashes against raw string inputs to test auth validation layers offline.
       </p>
+      <CompanionTool to="/tools/hash" icon={Hash} accent="cyan"
+        title="Need to generate a Bcrypt hash first?"
+        description="Use Hash & UUID Generator to create a salted Bcrypt hash, then paste it here to verify." />
 
       <div className="bg-card w-full max-w-3xl border border-border shadow-sm rounded-2xl p-6 lg:p-10 flex flex-col gap-6 mx-auto mt-4">
           

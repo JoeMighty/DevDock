@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Download } from 'lucide-react';
+import { Download, DatabaseZap } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 export default function JsonToTable() {
   const [jsonInput, setJsonInput] = useState('{\n  "name": "DevDock",\n  "version": "1.0.0"\n}');
@@ -27,9 +28,12 @@ export default function JsonToTable() {
           Render Table
         </button>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-2">
+      <p className="text-sm text-muted-foreground/80">
         Paste raw JSON into the editor to visualize it as an interactive table. Quickly verify data and export CSVs.
       </p>
+      <CompanionTool to="/tools/mock-data" icon={DatabaseZap} accent="orange"
+        title="Need test data? Generate it first"
+        description="Build a typed schema and generate bulk mock JSON to paste directly into this view." />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1 min-h-[400px]">
         <div className="flex flex-col bg-card border border-border rounded-xl shadow-sm overflow-hidden">

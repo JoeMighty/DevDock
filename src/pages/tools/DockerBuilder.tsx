@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Copy, Plus, X } from 'lucide-react';
+import { Box, Copy, Plus, X, Settings } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 import yaml from 'js-yaml';
 
 interface Service {
@@ -60,9 +61,12 @@ export default function DockerBuilder() {
             <Copy className="w-4 h-4" /> Copy YAML
         </button>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-2">
+      <p className="text-sm text-muted-foreground/80">
         Visually construct container configurations, port mappings, and environment variables. Perfectly enforces YAML indentation.
       </p>
+      <CompanionTool to="/tools/env" icon={Settings} accent="green"
+        title="Clean your .env first"
+        description="Validate and deduplicate your environment variables in ENV Formatter before wiring them into a service here." />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-[500px]">
           <div className="flex flex-col gap-4 overflow-y-auto pr-2">

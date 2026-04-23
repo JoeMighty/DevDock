@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { DatabaseZap, Copy, RefreshCw } from 'lucide-react';
+import { DatabaseZap, Copy, RefreshCw, Database } from 'lucide-react';
 import { format } from 'sql-formatter';
+import { CompanionTool } from '@/components/CompanionTool';
 
 export default function SqlFormatter() {
   const [input, setInput] = useState(`SELECT u.id, u.name, o.total FROM users u LEFT JOIN orders o ON u.id=o.user_id WHERE o.total > 100 AND u.active=true ORDER BY o.total DESC LIMIT 50`);
@@ -30,6 +31,9 @@ export default function SqlFormatter() {
       <p className="text-sm text-muted-foreground/80">
         Paste raw, minified SQL queries to apply consistent indentation, uppercase keywords, and alignment. Supports PostgreSQL, MySQL, and SQLite dialects.
       </p>
+      <CompanionTool to="/tools/schema" icon={Database} accent="blue"
+        title="Pair with Schema Designer"
+        description="Design your tables visually and generate the CREATE TABLE SQL, then format it here." />
 
       <div className="flex gap-2 flex-wrap">
         {(['sql', 'postgresql', 'mysql', 'sqlite'] as const).map(d => (

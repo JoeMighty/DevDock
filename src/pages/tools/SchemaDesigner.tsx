@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Database, Plus, Play } from 'lucide-react';
+import { Database, Plus, Play, DatabaseZap } from 'lucide-react';
+import { CompanionTool } from '@/components/CompanionTool';
 
 interface Column {
   name: string;
@@ -61,13 +62,16 @@ export default function SchemaDesigner() {
 
   return (
     <div className="h-full flex flex-col space-y-4">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Database className="w-6 h-6 text-primary" /> Schema Designer</h2>
         <div className="flex gap-2">
             <button onClick={addTable} className="px-4 py-2 bg-muted text-foreground rounded-md shadow-sm hover:bg-muted/80 transition-colors font-medium text-sm flex items-center gap-1"><Plus className="w-4 h-4"/> Add Table</button>
             <button onClick={generateSQL} className="px-4 py-2 bg-primary text-primary-foreground rounded-md shadow-sm hover:bg-primary/90 transition-colors font-medium text-sm flex items-center gap-1"><Play className="w-4 h-4" /> Generate SQL</button>
         </div>
       </div>
+      <CompanionTool to="/tools/sql" icon={DatabaseZap} accent="green"
+        title="Format the generated SQL"
+        description="Copy the CREATE TABLE output and paste it into SQL Formatter for consistent indentation and dialect-specific keywords." />
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 flex-1 overflow-hidden">
         <div className="lg:col-span-3 flex flex-wrap content-start gap-4 p-2 overflow-y-auto bg-muted/20 border border-border rounded-xl shadow-inner min-h-[400px]">
