@@ -29,6 +29,18 @@ import JsonDiff from '@/pages/tools/JsonDiff';
 import Base64Encoder from '@/pages/tools/Base64Encoder';
 import BcryptVerifier from '@/pages/tools/BcryptVerifier';
 
+// New Tools Expansion
+import CsvJsonConverter from '@/pages/tools/CsvJsonConverter';
+import SqlFormatter from '@/pages/tools/SqlFormatter';
+import StringToolkit from '@/pages/tools/StringToolkit';
+import LoremIpsum from '@/pages/tools/LoremIpsum';
+import UrlParser from '@/pages/tools/UrlParser';
+import QrCodeGenerator from '@/pages/tools/QrCodeGenerator';
+import HttpStatusCodes from '@/pages/tools/HttpStatusCodes';
+import UuidGenerator from '@/pages/tools/UuidGenerator';
+import TimestampConverter from '@/pages/tools/TimestampConverter';
+import NumberBaseConverter from '@/pages/tools/NumberBaseConverter';
+
 function App() {
   return (
     <Router>
@@ -61,6 +73,17 @@ function App() {
           <Route path="/tools/json-diff" element={<JsonDiff />} />
           <Route path="/tools/base64" element={<Base64Encoder />} />
           <Route path="/tools/bcrypt" element={<BcryptVerifier />} />
+
+          <Route path="/tools/csv-json" element={<CsvJsonConverter />} />
+          <Route path="/tools/sql" element={<SqlFormatter />} />
+          <Route path="/tools/strings" element={<StringToolkit />} />
+          <Route path="/tools/lorem" element={<LoremIpsum />} />
+          <Route path="/tools/url-parser" element={<UrlParser />} />
+          <Route path="/tools/qr-code" element={<QrCodeGenerator />} />
+          <Route path="/tools/http-status" element={<HttpStatusCodes />} />
+          <Route path="/tools/uuid" element={<UuidGenerator />} />
+          <Route path="/tools/timestamp" element={<TimestampConverter />} />
+          <Route path="/tools/number-base" element={<NumberBaseConverter />} />
         </Routes>
       </AppLayout>
     </Router>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -20,11 +20,18 @@ export const TOOLS = [
   { name: 'Encoder/Decoder', path: '/tools/encoder', icon: Code2, category: 'Data & Text' },
   { name: 'JSON Diff', path: '/tools/json-diff', icon: SplitSquareHorizontal, category: 'Data & Text' },
   { name: 'Base64 Encoder', path: '/tools/base64', icon: UploadCloud, category: 'Data & Text' },
+  { name: 'CSV ↔ JSON', path: '/tools/csv-json', icon: Table2, category: 'Data & Text' },
+  { name: 'SQL Formatter', path: '/tools/sql', icon: DatabaseZap, category: 'Data & Text' },
+  { name: 'String Toolkit', path: '/tools/strings', icon: CaseSensitive, category: 'Data & Text' },
+  { name: 'Lorem Ipsum', path: '/tools/lorem', icon: AlignLeft, category: 'Data & Text' },
 
   // Web & Network
   { name: 'API Tester', path: '/tools/api-tester', icon: Network, category: 'Web & Network' },
   { name: 'Sitemap Gen', path: '/tools/sitemap', icon: GitCommit, category: 'Web & Network' },
   { name: 'Uptime Monitor', path: '/tools/uptime', icon: Clock, category: 'Web & Network' },
+  { name: 'URL Parser', path: '/tools/url-parser', icon: Link2, category: 'Web & Network' },
+  { name: 'QR Code Gen', path: '/tools/qr-code', icon: QrCode, category: 'Web & Network' },
+  { name: 'HTTP Status Codes', path: '/tools/http-status', icon: ServerCrash, category: 'Web & Network' },
 
   // Architecture & Ops
   { name: 'Docker Builder', path: '/tools/docker', icon: Container, category: 'Architecture & Ops' },
@@ -40,10 +47,15 @@ export const TOOLS = [
   { name: 'PEM Decoder', path: '/tools/pem', icon: ShieldHalf, category: 'Security' },
   { name: 'Bcrypt Verifier', path: '/tools/bcrypt', icon: Fingerprint, category: 'Security' },
 
-  // Design & SDKs
+  // Dev Tools
   { name: 'Regex Tester', path: '/tools/regex', icon: Regex, category: 'Dev Tools' },
   { name: 'Changelog Gen', path: '/tools/changelog', icon: GitCommit, category: 'Dev Tools' },
   { name: 'Schema Designer', path: '/tools/schema', icon: Database, category: 'Dev Tools' },
+  { name: 'UUID / Nano ID', path: '/tools/uuid', icon: Dices, category: 'Dev Tools' },
+  { name: 'Timestamp Conv.', path: '/tools/timestamp', icon: CalendarClock, category: 'Dev Tools' },
+  { name: 'Number Base', path: '/tools/number-base', icon: Binary, category: 'Dev Tools' },
+
+  // Design & CSS
   { name: 'Color Checker', path: '/tools/color', icon: Palette, category: 'Design & CSS' },
   { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush, category: 'Design & CSS' },
 ];
