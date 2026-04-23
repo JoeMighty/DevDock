@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler, Sparkles, KeyRound, Tag, Settings, Code, Trash2 } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler, Sparkles, KeyRound, Tag, Settings, Code, Trash2, KeySquare, Wand2, FileCheck2, Bot, Sigma } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { version } from '../../../package.json';
@@ -51,6 +51,8 @@ export const TOOLS = [
   { name: 'PEM Decoder', path: '/tools/pem', icon: ShieldHalf, category: 'Security' },
   { name: 'Bcrypt Verifier', path: '/tools/bcrypt', icon: Fingerprint, category: 'Security' },
   { name: 'OTP / TOTP Gen', path: '/tools/otp', icon: KeyRound, category: 'Security' },
+  { name: 'Password Gen', path: '/tools/password-gen', icon: KeySquare, category: 'Security', isNew: true },
+  { name: 'HMAC Calculator', path: '/tools/hmac', icon: Sigma, category: 'Security', isNew: true },
 
   // Dev Tools
   { name: 'Regex Tester', path: '/tools/regex', icon: Regex, category: 'Dev Tools' },
@@ -64,12 +66,15 @@ export const TOOLS = [
   { name: 'Conv. Commits', path: '/tools/commits', icon: GitCommit, category: 'Dev Tools', isNew: true },
   { name: 'Semver Calc', path: '/tools/semver', icon: Tag, category: 'Dev Tools', isNew: true },
   { name: 'ENV Formatter', path: '/tools/env', icon: Settings, category: 'Dev Tools', isNew: true },
+  { name: 'robots.txt Gen', path: '/tools/robots', icon: Bot, category: 'Dev Tools', isNew: true },
+  { name: 'JSON Schema', path: '/tools/json-schema', icon: FileCheck2, category: 'Dev Tools', isNew: true },
 
   // Design & CSS
   { name: 'Color Checker', path: '/tools/color', icon: Palette, category: 'Design & CSS' },
   { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush, category: 'Design & CSS' },
   { name: 'CSS Units', path: '/tools/css-units', icon: Ruler, category: 'Design & CSS' },
   { name: 'Color Palette', path: '/tools/palette', icon: Sparkles, category: 'Design & CSS', isNew: true },
+  { name: 'Gradient Builder', path: '/tools/gradient', icon: Wand2, category: 'Design & CSS', isNew: true },
 ];
 
 export function Sidebar() {

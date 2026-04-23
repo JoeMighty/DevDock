@@ -1,7 +1,7 @@
 {
   "name": "devdock",
   "private": true,
-  "version": "1.5.0",
+  "version": "1.6.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "ajv": "8.18.0",
     "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
     "convex": "^1.36.0",

@@ -56,6 +56,13 @@ import SemverCalculator from '@/pages/tools/SemverCalculator';
 import EnvFormatter from '@/pages/tools/EnvFormatter';
 import XmlFormatter from '@/pages/tools/XmlFormatter';
 
+// v1.6.0 Tools
+import PasswordGenerator from '@/pages/tools/PasswordGenerator';
+import GradientBuilder from '@/pages/tools/GradientBuilder';
+import JsonSchemaValidator from '@/pages/tools/JsonSchemaValidator';
+import RobotsTxtGenerator from '@/pages/tools/RobotsTxtGenerator';
+import HmacCalculator from '@/pages/tools/HmacCalculator';
+
 function App() {
   return (
     <Router>
@@ -112,6 +119,12 @@ function App() {
           <Route path="/tools/semver" element={<SemverCalculator />} />
           <Route path="/tools/env" element={<EnvFormatter />} />
           <Route path="/tools/xml" element={<XmlFormatter />} />
+
+          <Route path="/tools/password-gen" element={<PasswordGenerator />} />
+          <Route path="/tools/gradient" element={<GradientBuilder />} />
+          <Route path="/tools/json-schema" element={<JsonSchemaValidator />} />
+          <Route path="/tools/robots" element={<RobotsTxtGenerator />} />
+          <Route path="/tools/hmac" element={<HmacCalculator />} />
         </Routes>
       </AppLayout>
     </Router>

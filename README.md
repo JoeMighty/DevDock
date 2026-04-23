@@ -1,8 +1,10 @@
 <div align="center">
   <h1>🚀 DevDock</h1>
-  <p><strong>The ultimate, lightning-fast developer toolkit. 46 offline utilities. Zero backend latency.</strong></p>
+  <p><strong>The ultimate, lightning-fast developer toolkit. 51 offline utilities. Zero backend latency.</strong></p>
 
   <p>
+    <img src="https://img.shields.io/badge/version-1.6.0-6366f1?style=flat-square" alt="Version" />
+    <img src="https://img.shields.io/badge/tools-51-8b5cf6?style=flat-square" alt="Tools" />
     <img src="https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
     <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -13,71 +15,123 @@
 
 ## ✨ Overview
 
-**DevDock** is a web-based platform providing 46 highly specialized developer tools in one beautifully unified, client-side interface. Stop relying on slow, ad-ridden web apps for your daily workflow. Everything inside DevDock runs instantly and privately in your browser.
+**DevDock** is a web-based platform providing **51 highly specialized developer tools** in one beautifully unified, client-side interface. Stop relying on slow, ad-ridden web apps for your daily workflow. Everything inside DevDock runs instantly and privately in your browser — no backend, no telemetry.
 
-Designed with a premium glassmorphic Light/Dark aesthetic, DevDock acts as your personal engineering command center.
+Key features:
+- **Companion Tool Network** — tools contextually suggest related utilities (e.g. curl → API Tester, Semver → Changelog, Hash → Bcrypt)
+- **Persistent Preferences** — colours, regex patterns, QR styles, OTP secrets and more are saved locally via `localStorage`
+- **Glassmorphic Light/Dark UI** — premium aesthetic powered by Framer Motion and Tailwind
 
-## 🧰 The 46 Modules
+## 🧰 The 51 Modules
 
 Organized across 6 disciplines:
 
 ### 📊 Data & Text
-- **JSON to Table**: Visualize, traverse, and export raw nested JSON to CSV.
-- **HTML to JSX**: Convert DOM strings to React functional component logic.
-- **Mock Data Gen**: Scaffold typed array payloads across multiple data schemas.
-- **Markdown Editor**: Bidirectional GFM previewer and Rich-Text IDE.
-- **Encoder / Decoder**: Bidirectional Hex, URI, and Base64 string transformations.
-- **JSON Diff**: Dual-pane git-style engine for isolating JSON node mutations.
-- **Base64 Encoder**: Drag-and-drop any file to a raw `data:` URI string.
-- **CSV ↔ JSON**: Bidirectional spreadsheet-to-array conversion.
-- **SQL Formatter**: Prettify minified SQL with uppercase keywords across PostgreSQL, MySQL, and SQLite dialects.
-- **String Toolkit**: 12 naming convention converters — camelCase, snake_case, SCREAMING_SNAKE, slugify, and more.
-- **Lorem Ipsum**: Words, sentences, or paragraphs of placeholder content for UI prototyping.
-- **YAML ↔ JSON**: Bidirectional conversion essential for Kubernetes, GitHub Actions, and Helm charts.
-- **Text Diff**: General line-by-line text comparison with split and unified view modes.
-- **XML Formatter**: Prettify or minify XML for SOAP APIs, Android manifests, Maven POMs, and RSS feeds.
+| Tool | Description |
+|---|---|
+| **JSON to Table** | Visualize and export nested JSON to CSV |
+| **HTML to JSX** | Convert DOM strings to React functional component code |
+| **Mock Data Gen** | Scaffold typed JSON payloads across configurable schemas |
+| **Markdown Editor** | Bidirectional GFM previewer and rich-text IDE |
+| **Encoder / Decoder** | Bidirectional Hex, URI, and Base64 string transformations |
+| **JSON Diff** | Dual-pane git-style engine for isolating JSON mutations |
+| **Base64 Encoder** | Drag-and-drop any file to a raw `data:` URI string |
+| **CSV ↔ JSON** | Bidirectional spreadsheet-to-array conversion |
+| **SQL Formatter** | Prettify minified SQL across PostgreSQL, MySQL, and SQLite dialects |
+| **String Toolkit** | 12 naming convention converters — camelCase, snake_case, slugify, and more |
+| **Lorem Ipsum** | Words, sentences, or paragraphs of placeholder content |
+| **YAML ↔ JSON** | Bidirectional conversion for Kubernetes, GitHub Actions, and Helm |
+| **Text Diff** | Line-by-line text comparison with split and unified views |
+| **XML Formatter** | Prettify or minify XML for SOAP APIs, Android manifests, and RSS feeds |
 
 ### 🌐 Web & Network
-- **API Request Tester**: Fire full HTTP protocols with headers, bodies, and local history.
-- **Sitemap Generator**: Format URL trees into ready-to-deploy `sitemap.xml` files.
-- **Uptime Monitor**: Active latency tracking for critical server endpoints.
-- **URL Parser & Builder**: Decompose URLs into components and visually edit query parameters.
-- **QR Code Designer**: Custom QR codes with configurable eye shapes, per-element colour overrides, and logo embedding.
-- **HTTP Status Codes**: Searchable reference for all standard HTTP response codes.
+| Tool | Description |
+|---|---|
+| **API Request Tester** | Fire full HTTP requests with headers, bodies, and local history |
+| **Sitemap Generator** | Format URL trees into ready-to-deploy `sitemap.xml` files |
+| **Uptime Monitor** | Active latency tracking for critical endpoints |
+| **URL Parser & Builder** | Decompose URLs into components and visually edit query parameters |
+| **QR Code Designer** | Custom QR codes with eye shapes, colour overrides, and logo embedding |
+| **HTTP Status Codes** | Searchable reference for all standard HTTP response codes |
 
 ### ⚙️ Architecture & Ops
-- **Docker Compose Builder**: Visual form engine outputting strict `js-yaml` container configurations.
-- **Chmod Calculator**: Configure Linux permissions visually with Octal and Bash flag output.
-- **Cron Schedule Generator**: Build complex cron expressions via a UI instead of memorizing syntax.
+| Tool | Description |
+|---|---|
+| **Docker Compose Builder** | Visual form engine outputting strict `js-yaml` container configurations |
+| **Chmod Calculator** | Configure Linux permissions visually with Octal and Bash flag output |
+| **Cron Schedule Generator** | Build complex cron expressions via a guided UI |
 
 ### 🛡️ Cybersecurity
-- **JWT Decoder**: Parse JSON Web Tokens to expose headers, payloads, and expiration offline.
-- **Hash & UUID**: Generate MD5, SHA-256, and UUIDv4 identifiers.
-- **Password Analyzer & Generator**: `zxcvbn` entropy scoring plus XKCD-style passphrase generation.
-- **Log Sanitizer**: Regex-powered PII scrubbing for IPv4, credit cards, emails, and MAC addresses.
-- **CIDR Calculator**: IP network subdivision into mask notations and broadcast addresses.
-- **PEM Certificate Decoder**: Parse X.509 Base64 certificates offline for keys, validity, and subjects.
-- **Bcrypt Hash Verifier**: Async `$2a$` hash evaluation against plain-text predictions.
-- **OTP / TOTP Generator**: Live time-based one-time passwords with countdown timer for 2FA testing.
+| Tool | Description |
+|---|---|
+| **JWT Decoder** | Parse JSON Web Tokens offline — headers, payload, expiry |
+| **Hash & UUID Generator** | MD5, SHA-256, Bcrypt salted hashes, and UUID v4 bulk generation |
+| **Password Analyzer** | `zxcvbn` entropy scoring with XKCD passphrase generation |
+| **Password Generator** | Cryptographically secure passwords via `crypto.getRandomValues()` — configurable charset, length, bulk mode |
+| **HMAC Calculator** | Sign strings with HMAC-SHA256/512/1/MD5 — hex + base64 output for webhook verification |
+| **Log Sanitizer** | Regex-powered PII scrubbing for IPs, credit cards, emails, and MAC addresses |
+| **CIDR Calculator** | IP network subdivision into mask notations and broadcast addresses |
+| **PEM Certificate Decoder** | Parse X.509 Base64 certificates offline for keys, validity, and subjects |
+| **Bcrypt Hash Verifier** | Async `$2a$` hash evaluation against plain-text inputs |
+| **OTP / TOTP Generator** | Live time-based one-time passwords with countdown timer for 2FA testing |
 
 ### 🔧 Dev Tools
-- **Regex Tester**: Live match highlighting playground.
-- **Changelog Generator**: Standard Markdown release log builder.
-- **Database Schema Designer**: Visual SQL table mapper with code export.
-- **UUID / Nano ID Generator**: Cryptographically random UUID v4 and configurable Nano IDs.
-- **Unix Timestamp Converter**: Bidirectional epoch ↔ human date converter.
-- **Number Base Converter**: Decimal, Binary, Octal, and Hexadecimal conversion.
-- **.gitignore Generator**: Multi-stack gitignore builder (21 stacks: Node, Python, Go, Laravel, Docker, macOS, JetBrains, and more).
-- **curl → Fetch/Axios**: Parse any `curl` command into clean `fetch()` or `axios` JavaScript code.
-- **Conventional Commits Builder**: Guided form producing spec-compliant `feat(scope): description` commit messages with breaking change support.
-- **Semver Calculator**: Parse a version string and calculate the next major, minor, patch, alpha, beta, and RC bumps.
-- **ENV File Formatter**: Validate, deduplicate, sort, and clean `.env` files with real-time feedback.
+| Tool | Description |
+|---|---|
+| **Regex Tester** | Live match highlighting playground with persistent pattern storage |
+| **Changelog Generator** | Standard Markdown release log builder |
+| **Database Schema Designer** | Visual SQL table mapper with `CREATE TABLE` export |
+| **UUID / Nano ID Generator** | Cryptographically random UUID v4 and configurable Nano IDs |
+| **Unix Timestamp Converter** | Bidirectional epoch ↔ human date conversion |
+| **Number Base Converter** | Decimal, Binary, Octal, and Hexadecimal conversion |
+| **.gitignore Generator** | Multi-stack builder (21 stacks: Node, Python, Go, Docker, macOS, JetBrains, and more) |
+| **curl → Fetch/Axios** | Parse any `curl` command into clean `fetch()` or `axios` code |
+| **Conventional Commits Builder** | Guided spec-compliant commit message builder with breaking change support |
+| **Semver Calculator** | Parse a version string and calculate major/minor/patch/pre-release bumps |
+| **ENV File Formatter** | Validate, deduplicate, sort, and clean `.env` files |
+| **robots.txt Generator** | Build `robots.txt` with per-bot rules, crawl-delay, presets, and sitemap declaration |
+| **JSON Schema Validator** | Validate JSON documents against JSON Schema Draft-07 via Ajv with path-level errors |
 
 ### 🎨 Design & CSS
-- **Color Contrast Checker**: WCAG AA/AAA compliance verification.
-- **CSS Shadows & Gradients**: Visually build and extract CSS styling syntax.
-- **CSS Unit Converter**: px/rem/em/pt/vw/vh conversion with configurable root font size.
-- **Color Palette Generator**: Generate Tailwind-style shade scales, complementary, triadic, split-complementary, and tetradic palettes from any base colour.
+| Tool | Description |
+|---|---|
+| **Color Contrast Checker** | WCAG AA/AAA compliance verification |
+| **CSS Shadows & Gradients** | Visually build and extract CSS styling syntax |
+| **CSS Unit Converter** | px/rem/em/pt/vw/vh conversion with configurable root font size and viewport |
+| **Color Palette Generator** | Tailwind shade scales, complementary, triadic, tetradic palettes from any base colour |
+| **Gradient Builder** | Visual linear/radial/conic CSS gradient builder with stop editor, presets, and live preview |
+
+## 🔗 Companion Tool Network
+
+DevDock features **13+ contextual cross-links** between related tools to guide multi-step workflows:
+
+- `curl → Fetch` ↔ `API Tester`
+- `Mock Data Gen` → `JSON to Table` + `CSV ↔ JSON`
+- `Conventional Commits` ↔ `Changelog Generator` ↔ `Semver Calculator`
+- `Hash & UUID` ↔ `Bcrypt Verifier`
+- `Password Generator` → `Bcrypt Verifier` → `Password Analyzer`
+- `URL Parser` → `QR Code Designer` + `API Tester`
+- `JSON Diff` ↔ `Text Diff`
+- `Base64` ↔ `JWT Decoder` ↔ `PEM Decoder`
+- `SQL Formatter` ↔ `Schema Designer`
+- `ENV Formatter` ↔ `Docker Compose Builder`
+- `robots.txt Generator` ↔ `Sitemap Generator`
+- `HMAC Calculator` ↔ `Hash & UUID` + `API Tester`
+- `Gradient Builder` ↔ `Color Palette Generator`
+
+## 🧠 Persistent Preferences
+
+User settings are automatically saved to `localStorage` — no account, no sync, no server. Includes:
+- QR Code styles and colours
+- Color palette base colour and contrast checker colours
+- Regex patterns and test strings
+- OTP secrets, algorithm, and period
+- Conventional Commits form state
+- Semver version input
+- CSS unit converter viewport config
+- SQL dialect, gradient stops and type, HMAC key and algorithm, password generator config
+
+Use **Clear saved memory** in the sidebar footer to wipe all stored preferences instantly.
 
 ## 🚀 Getting Started
 
@@ -94,3 +148,27 @@ npm run dev
 npm run build
 npx gh-pages -d dist
 ```
+
+## 📦 Changelog
+
+### v1.6.0
+- ✨ **Password Generator** — `crypto.getRandomValues()` based, configurable charset/length, bulk mode, strength bar
+- ✨ **Gradient Builder** — visual linear/radial/conic builder with colour stop editor, presets, live preview
+- ✨ **JSON Schema Validator** — Ajv Draft-07 validation with path-level error reporting
+- ✨ **robots.txt Generator** — per-bot rules, presets (Block GPTBot, SEO Friendly, Allow All), download
+- ✨ **HMAC Calculator** — HMAC-SHA256/512/1/MD5, hex + base64 output, webhook use case reference
+
+### v1.5.0
+- ✨ **Companion Tool Network** — 13 contextual cross-links between related tools
+- ✨ **localStorage Persistence** — user preferences saved across sessions for 10 key tools
+- ✨ **Clear saved memory** — one-click wipe of all stored preferences from sidebar
+
+### v1.4.0
+- ✨ Conventional Commits Builder, Semver Calculator, ENV Formatter, Color Palette Generator, OTP Generator, XML Formatter (6 new tools)
+- ✨ "New" pill badges on cards — newest 4 tools float to top of homepage grid
+
+### v1.3.0
+- ✨ YAML ↔ JSON, Text Diff, .gitignore Generator, curl → Fetch, CSS Unit Converter (5 new tools)
+
+### v1.2.0
+- ✨ CSV ↔ JSON, SQL Formatter, String Toolkit, Lorem Ipsum, URL Parser, QR Code Designer, HTTP Status Codes, UUID Generator, Timestamp Converter, Number Base Converter (10 new tools)
