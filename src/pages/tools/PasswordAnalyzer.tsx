@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Eye, EyeOff } from 'lucide-react';
+import { ShieldCheck, Eye, EyeOff, RefreshCw, Settings2 } from 'lucide-react';
 import zxcvbn from 'zxcvbn';
 import { cn } from '@/lib/utils';
+
+const WORDLIST = ["apple", "river", "cloud", "stone", "tiger", "ocean", "mountain", "eagle", "forest", "shadow", "winter", "summer", "copper", "silver", "golden", "rocket", "planet", "galaxy", "comet", "nebula", "crystal", "diamond", "emerald", "sapphire", "ruby", "phoenix", "dragon", "wizard", "knight", "castle", "sword", "shield", "helmet", "armor", "arrow", "bow", "magic", "spell", "potion", "scroll", "book", "library", "tower", "bridge", "gate", "wall", "city", "village", "town", "road", "path", "trail", "journey", "quest", "adventure", "story", "legend", "myth", "tale", "song", "music", "dance", "rhythm", "beat", "melody", "harmony", "chord", "note", "scale", "quantum", "matrix", "vector", "orbit", "pulse", "echo", "vertex", "nexus", "cipher", "logic", "binary", "system", "network", "node", "proxy", "pixel", "frame", "render", "engine", "core", "spark", "flame", "frost", "storm"];
 
 export default function PasswordAnalyzer() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+  // Generator State
+  const [len, setLen] = useState(16);
+  const [opts, setOpts] = useState({ upper: true, lower: true, nums: true, syms: true, memorable: false });
 
   const result = zxcvbn(password);
   
@@ -31,13 +37,41 @@ export default function PasswordAnalyzer() {
     }
   };
 
+  const generatePassword = () => {
+      if (opts.memorable) {
+          const words = [];
+          const count = Math.max(3, Math.floor(len / 6)); // approximate length spacing
+          for(let i=0; i<count; i++) {
+              let w = WORDLIST[Math.floor(Math.random() * WORDLIST.length)];
+              if (opts.nums && i === count - 1) w += Math.floor(Math.random() * 100);
+              words.push(w);
+          }
+          setPassword(words.join('-'));
+          return;
+      }
+
+      let charset = '';
+      if (opts.lower) charset += 'abcdefghijklmnopqrstuvwxyz';
+      if (opts.upper) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      if (opts.nums) charset += '0123456789';
+      if (opts.syms) charset += '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+
+      if (!charset) charset = 'abcdefghijklmnopqrstuvwxyz';
+
+      let res = '';
+      for(let i=0; i<len; i++) {
+          res += charset[Math.floor(Math.random() * charset.length)];
+      }
+      setPassword(res);
+  };
+
   return (
     <div className="h-full flex flex-col space-y-4">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-2xl font-bold flex items-center gap-2"><ShieldCheck className="w-6 h-6 text-primary" /> Password Analyzer</h2>
+        <h2 className="text-2xl font-bold flex items-center gap-2"><ShieldCheck className="w-6 h-6 text-primary" /> Password Analyzer & Generator</h2>
       </div>
       <p className="text-sm text-muted-foreground/80 mb-4">
-        Calculate standard mathematical password entropy via zxcvbn algorithm. Analyzes dictionary attacks, spatial patterns, and offline hashing crack times.
+        Calculate standard mathematical password entropy via zxcvbn algorithms or generate cryptographically secure passwords and memorable XKCD passphrases.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-6 flex-1 min-h-[400px]">
@@ -82,6 +116,52 @@ export default function PasswordAnalyzer() {
                       </div>
                   </div>
               )}
+
+              {/* Generator Panel */}
+              <div className="bg-card border border-border/50 rounded-2xl p-6 mt-2 relative overflow-hidden">
+                 <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                     <Settings2 className="w-32 h-32" />
+                 </div>
+                 <h3 className="font-bold text-lg mb-4 flex items-center gap-2 relative z-10"><RefreshCw className="w-4 h-4 text-primary" />Secure Generator Options</h3>
+                 
+                 <div className="flex flex-col gap-4 relative z-10">
+                     <div>
+                         <div className="flex justify-between text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+                             <span>Password Length</span>
+                             <span className="text-primary">{len}</span>
+                         </div>
+                         <input 
+                             type="range" min="8" max="64" value={len} onChange={e => setLen(Number(e.target.value))}
+                             className="w-full accent-primary cursor-pointer"
+                         />
+                     </div>
+
+                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-2">
+                         <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+                             <input type="checkbox" checked={opts.upper} disabled={opts.memorable} onChange={e => setOpts({...opts, upper: e.target.checked})} className="accent-primary" /> Uppercase
+                         </label>
+                         <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+                             <input type="checkbox" checked={opts.lower} disabled={opts.memorable} onChange={e => setOpts({...opts, lower: e.target.checked})} className="accent-primary" /> Lowercase
+                         </label>
+                         <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+                             <input type="checkbox" checked={opts.nums} onChange={e => setOpts({...opts, nums: e.target.checked})} className="accent-primary" /> Numbers
+                         </label>
+                         <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+                             <input type="checkbox" checked={opts.syms} disabled={opts.memorable} onChange={e => setOpts({...opts, syms: e.target.checked})} className="accent-primary" /> Symbols
+                         </label>
+                     </div>
+
+                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 pt-4 border-t border-border/40">
+                         <label className="flex items-center gap-2 text-sm font-semibold cursor-pointer w-full sm:w-auto">
+                             <input type="checkbox" checked={opts.memorable} onChange={e => setOpts({...opts, memorable: e.target.checked})} className="accent-primary w-4 h-4" /> 
+                             Memorable Phrase (XKCD)
+                         </label>
+                         <button onClick={generatePassword} className="flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-2.5 rounded-lg hover:bg-primary/90 transition-all w-full sm:w-auto ml-auto">
+                             <RefreshCw className="w-4 h-4" /> Generate
+                         </button>
+                     </div>
+                 </div>
+              </div>
           </div>
 
           <div className="bg-card border border-border rounded-2xl shadow-sm p-6 overflow-y-auto">
