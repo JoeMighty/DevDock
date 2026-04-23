@@ -73,7 +73,7 @@ export default function JsonPathTester() {
           </div>
           <div className="flex gap-2 mt-2">
              <span className="text-[10px] font-mono text-muted-foreground/60">Try: <button onClick={() => setPath('$.users[*].id')} className="underline hover:text-foreground">$.users[*].id</button></span>
-             <span className="text-[10px] font-mono text-muted-foreground/60">| <button onClick={() => setPath('$.users[?(@.id > 1)]')} className="underline hover:text-foreground">$.users[?(@.id > 1)]</button></span>
+             <span className="text-[10px] font-mono text-muted-foreground/60">| <button onClick={() => setPath('$.users[?(@.id > 1)]')} className="underline hover:text-foreground">$.users[?(@.id {">"} 1)]</button></span>
           </div>
         </div>
       </div>
