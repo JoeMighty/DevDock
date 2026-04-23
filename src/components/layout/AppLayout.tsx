@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { ThemeToggle } from './ThemeToggle';
 import { WelcomeModal } from './WelcomeModal';
@@ -35,7 +36,9 @@ export function AppLayout({ children }: AppLayoutProps) {
             <Menu className="w-6 h-6" />
           </button>
           
-          <div className="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">DevDock</div>
+          <Link to="/" className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60 hover:opacity-80 transition-opacity">
+            DevDock
+          </Link>
           <div className="ml-auto flex items-center gap-3">
              <ThemeToggle />
           </div>

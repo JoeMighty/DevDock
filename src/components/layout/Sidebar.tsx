@@ -177,15 +177,15 @@ export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       </button>
 
       <div className="flex flex-col px-6 mb-8 pt-6">
-        <div className="flex items-center gap-3 mb-1">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/30 flex-shrink-0">
+        <Link to="/" className="flex items-center gap-3 mb-1 group hover:opacity-80 transition-opacity">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/30 flex-shrink-0 group-hover:scale-110 transition-transform">
             <LayoutDashboard className="w-5 h-5 text-white" />
           </div>
           <div>
             <h1 className="font-bold text-lg tracking-tight">DevDock</h1>
             <p className="text-[10px] text-muted-foreground/60 font-semibold tracking-widest uppercase">Console</p>
           </div>
-        </div>
+        </Link>
       </div>
       
       <div className="flex-1 overflow-y-auto px-4 pb-8 custom-scrollbar">
