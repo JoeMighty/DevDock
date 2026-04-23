@@ -66,6 +66,13 @@ const TypographyScale    = lazy(() => import('@/pages/tools/TypographyScale'));
 const SvgOptimiser       = lazy(() => import('@/pages/tools/SvgOptimiser'));
 const FaviconGenerator   = lazy(() => import('@/pages/tools/FaviconGenerator'));
 
+// v1.8.0 Tools
+const NginxBuilder       = lazy(() => import('@/pages/tools/NginxBuilder'));
+const RsaGenerator       = lazy(() => import('@/pages/tools/RsaGenerator'));
+const SvgToReact         = lazy(() => import('@/pages/tools/SvgToReact'));
+const ColorNameFinder    = lazy(() => import('@/pages/tools/ColorNameFinder'));
+const JsonToGo           = lazy(() => import('@/pages/tools/JsonToGo'));
+
 const PageLoader = () => (
   <div className="flex-1 flex items-center justify-center p-12">
     <div className="flex flex-col items-center gap-4">
@@ -140,6 +147,13 @@ function App() {
             <Route path="/tools/typography" element={<TypographyScale />} />
             <Route path="/tools/svg-optimiser" element={<SvgOptimiser />} />
             <Route path="/tools/favicon" element={<FaviconGenerator />} />
+
+            {/* v1.8.0 */}
+            <Route path="/tools/nginx" element={<NginxBuilder />} />
+            <Route path="/tools/rsa" element={<RsaGenerator />} />
+            <Route path="/tools/svg-to-react" element={<SvgToReact />} />
+            <Route path="/tools/color-name" element={<ColorNameFinder />} />
+            <Route path="/tools/json-to-go" element={<JsonToGo />} />
           </Routes>
         </Suspense>
       </AppLayout>

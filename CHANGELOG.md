@@ -4,6 +4,23 @@ All notable changes to DevDock are documented here.
 
 ---
 
+## [1.8.0] — 2026-04-23
+
+### Added
+- ✨ **Nginx Config Builder** — Form-based generator for server blocks, reverse proxies, and SPA deployments with SSL templates.
+- ✨ **RSA / ECDSA Generator** — Generate cryptographically secure public/private keys (1024-4096 bit) offline using node-forge.
+- ✨ **SVG to React Component** — Instant conversion of raw SVG code into type-safe React functional components with camelCase attribute mapping.
+- ✨ **Color Name Finder** — Identify the closest human-readable names for any hex color using Euclidean distance logic.
+- ✨ **JSON to Go Struct** — Convert JSON objects into Go type definitions with proper tags and camelCasing.
+- 📂 **Readme Navigation Tabs** — Added a simulated tab navigation bar at the top of the README for easier access to the Changelog and Releases.
+
+### Companion Tool Pairings Added
+- RSA / ECDSA Generator → PEM Decoder
+- SVG to React ↔ SVG Optimiser
+- Color Name Finder ↔ Color Palette Generator
+
+---
+
 ## [1.7.0] — 2026-04-23
 
 ### Added

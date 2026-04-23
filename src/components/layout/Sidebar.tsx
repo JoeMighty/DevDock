@@ -28,8 +28,8 @@ export const TOOLS = [
   { name: 'YAML ↔ JSON', path: '/tools/yaml', icon: ArrowLeftRight, category: 'Data & Text' },
   { name: 'Text Diff', path: '/tools/text-diff', icon: GitCompare, category: 'Data & Text' },
   { name: 'XML Formatter', path: '/tools/xml', icon: Code, category: 'Data & Text' },
-  { name: 'GraphQL Formatter', path: '/tools/graphql', icon: Network, category: 'Data & Text', isNew: true },
-  { name: 'JSON Path Tester', path: '/tools/json-path', icon: Search, category: 'Data & Text', isNew: true },
+  { name: 'GraphQL Formatter', path: '/tools/graphql', icon: Network, category: 'Data & Text' },
+  { name: 'JSON Path Tester', path: '/tools/json-path', icon: Search, category: 'Data & Text' },
 
   // Web & Network
   { name: 'API Tester', path: '/tools/api-tester', icon: Network, category: 'Web & Network' },
@@ -38,12 +38,13 @@ export const TOOLS = [
   { name: 'URL Parser', path: '/tools/url-parser', icon: Link2, category: 'Web & Network' },
   { name: 'QR Code Gen', path: '/tools/qr-code', icon: QrCode, category: 'Web & Network' },
   { name: 'HTTP Status Codes', path: '/tools/http-status', icon: ServerCrash, category: 'Web & Network' },
-  { name: 'Favicon Gen', path: '/tools/favicon', icon: Sparkles, category: 'Web & Network', isNew: true },
+  { name: 'Favicon Gen', path: '/tools/favicon', icon: Sparkles, category: 'Web & Network' },
 
   // Architecture & Ops
   { name: 'Docker Builder', path: '/tools/docker', icon: Container, category: 'Architecture & Ops' },
   { name: 'Chmod Calc', path: '/tools/chmod', icon: LockKeyhole, category: 'Architecture & Ops' },
   { name: 'Cron Gen', path: '/tools/cron', icon: Clock, category: 'Architecture & Ops' },
+  { name: 'Nginx Builder', path: '/tools/nginx', icon: Server, category: 'Architecture & Ops', isNew: true },
 
   // Security
   { name: 'JWT Decoder', path: '/tools/jwt', icon: Key, category: 'Security' },
@@ -54,6 +55,7 @@ export const TOOLS = [
   { name: 'PEM Decoder', path: '/tools/pem', icon: ShieldHalf, category: 'Security' },
   { name: 'Bcrypt Verifier', path: '/tools/bcrypt', icon: Fingerprint, category: 'Security' },
   { name: 'OTP / TOTP Gen', path: '/tools/otp', icon: KeyRound, category: 'Security' },
+  { name: 'RSA / ECDSA Gen', path: '/tools/rsa', icon: Shield, category: 'Security', isNew: true },
   { name: 'Password Gen', path: '/tools/password-gen', icon: KeySquare, category: 'Security' },
   { name: 'HMAC Calculator', path: '/tools/hmac', icon: Sigma, category: 'Security' },
 
@@ -66,6 +68,8 @@ export const TOOLS = [
   { name: 'Number Base', path: '/tools/number-base', icon: Binary, category: 'Dev Tools' },
   { name: '.gitignore Gen', path: '/tools/gitignore', icon: GitBranch, category: 'Dev Tools' },
   { name: 'curl → Fetch', path: '/tools/curl', icon: Terminal, category: 'Dev Tools' },
+  { name: 'SVG to React', path: '/tools/svg-to-react', icon: FileCode, category: 'Dev Tools', isNew: true },
+  { name: 'JSON to Go', path: '/tools/json-to-go', icon: Code2, category: 'Dev Tools', isNew: true },
   { name: 'Conv. Commits', path: '/tools/commits', icon: GitCommit, category: 'Dev Tools' },
   { name: 'Semver Calc', path: '/tools/semver', icon: Tag, category: 'Dev Tools' },
   { name: 'ENV Formatter', path: '/tools/env', icon: Settings, category: 'Dev Tools' },
@@ -78,8 +82,9 @@ export const TOOLS = [
   { name: 'CSS Units', path: '/tools/css-units', icon: Ruler, category: 'Design & CSS' },
   { name: 'Color Palette', path: '/tools/palette', icon: Sparkles, category: 'Design & CSS' },
   { name: 'Gradient Builder', path: '/tools/gradient', icon: Wand2, category: 'Design & CSS' },
-  { name: 'Typography Scale', path: '/tools/typography', icon: TypeIcon, category: 'Design & CSS', isNew: true },
-  { name: 'SVG Optimiser', path: '/tools/svg-optimiser', icon: Sparkles, category: 'Design & CSS', isNew: true },
+  { name: 'Typography Scale', path: '/tools/typography', icon: TypeIcon, category: 'Design & CSS' },
+  { name: 'SVG Optimiser', path: '/tools/svg-optimiser', icon: Sparkles, category: 'Design & CSS' },
+  { name: 'Color Name Finder', path: '/tools/color-name', icon: Palette, category: 'Design & CSS', isNew: true },
 ];
 
 export function Sidebar() {
