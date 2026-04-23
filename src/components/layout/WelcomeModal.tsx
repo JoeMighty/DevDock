@@ -29,11 +29,11 @@ export function WelcomeModal() {
             onClick={close}
           />
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-46%" }}
+            animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+            exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-46%" }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-full max-w-[550px] bg-card/80 backdrop-blur-2xl border border-white/10 shadow-[0_0_80px_-20px_rgba(139,92,246,0.3)] rounded-2xl overflow-hidden"
+            className="fixed left-1/2 top-1/2 z-[101] w-full max-w-[550px] bg-card/80 backdrop-blur-2xl border border-white/10 shadow-[0_0_80px_-20px_rgba(139,92,246,0.3)] rounded-2xl overflow-hidden"
           >
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 via-primary to-purple-500" />
             
@@ -73,8 +73,8 @@ export function WelcomeModal() {
                        <Zap className="w-4 h-4 text-purple-500" />
                     </div>
                     <div>
-                      <div className="font-bold text-sm text-foreground">Premium Glassmorphism</div>
-                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Built flawlessly on Framer Motion and Tailwind. Toggle native Dark and Light semantic modes in the top right.</div>
+                      <div className="font-bold text-sm text-foreground">Light & Dark Mode</div>
+                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Built on Framer Motion and Tailwind. Toggle native Dark and Light semantic themes in the top right corner.</div>
                     </div>
                  </div>
               </div>
