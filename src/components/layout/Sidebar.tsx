@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler, Sparkles, KeyRound, Tag, Settings, Code } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler, Sparkles, KeyRound, Tag, Settings, Code, Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { version } from '../../../package.json';
@@ -112,6 +112,13 @@ export function Sidebar() {
       setExpanded(prev => ({ ...prev, [cat]: !prev[cat] }));
   };
 
+  const clearMemory = () => {
+      Object.keys(localStorage)
+        .filter(k => k.startsWith('devdock_'))
+        .forEach(k => localStorage.removeItem(k));
+      setRecents([]);
+  };
+
   const renderToolLink = (tool: typeof TOOLS[0]) => {
       const isActive = location.pathname === tool.path;
       const Icon = tool.icon;
@@ -202,6 +209,13 @@ export function Sidebar() {
       </div>
 
       <div className="mt-auto px-6 pb-6 pt-4 border-t border-border/40 bg-background/50 backdrop-blur-md sticky bottom-0 z-10 w-full">
+          <button
+            onClick={clearMemory}
+            className="flex items-center gap-2 w-full px-3 py-2 mb-2 rounded-lg text-xs font-semibold text-muted-foreground/60 hover:text-destructive hover:bg-destructive/10 transition-all group"
+          >
+            <Trash2 className="w-3.5 h-3.5 flex-shrink-0 group-hover:text-destructive transition-colors" />
+            Clear saved memory
+          </button>
           <a 
             href="https://github.com/JoeMighty/DevDock" 
             target="_blank" 
