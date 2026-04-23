@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Palette, Copy, Check, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 // ── Color math ──────────────────────────────────────────────────────────────
 function hexToHsl(hex: string): [number, number, number] {
@@ -63,7 +64,7 @@ function PaletteRow({ title, colors, labels }: { title: string; colors: string[]
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 export default function ColorPaletteGenerator() {
-  const [hex, setHex] = useState('#8b5cf6');
+  const [hex, setHex] = useLocalStorage('devdock_palette_hex', '#8b5cf6');
 
   const gen = useCallback(() => {
     if (!/^#[0-9a-fA-F]{6}$/.test(hex)) return null;

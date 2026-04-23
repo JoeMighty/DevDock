@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Regex } from 'lucide-react';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export default function RegexTester() {
-  const [pattern, setPattern] = useState('');
-  const [flags, setFlags] = useState('g');
-  const [text, setText] = useState('Type some text here to test your regular expression...');
+  const [pattern, setPattern] = useLocalStorage('devdock_regex_pattern', '');
+  const [flags, setFlags] = useLocalStorage('devdock_regex_flags', 'g');
+  const [text, setText] = useLocalStorage('devdock_regex_text', 'Type some text here to test your regular expression...');
   
   let regex: RegExp | null = null;
   let error = null;

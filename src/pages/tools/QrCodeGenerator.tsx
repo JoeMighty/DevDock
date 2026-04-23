@@ -3,6 +3,7 @@ import QRCodeStyling from 'qr-code-styling';
 import type { DotType, CornerSquareType, CornerDotType } from 'qr-code-styling';
 import { QrCode, Download, Upload, X, Link2 } from 'lucide-react';
 import { CompanionTool } from '@/components/CompanionTool';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type DotStyle = DotType;
@@ -84,7 +85,8 @@ export default function QrCodeGenerator() {
   const qrRef = useRef<QRCodeStyling | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const [opts, setOpts] = useState<QrOptions>({
+  // ── QR Code options (persisted, logo excluded to avoid quota issues)
+  const [opts, setOpts] = useLocalStorage<Omit<QrOptions, 'logo'> & { logoSize: number }>('devdock_qr_opts', {
     text: 'https://joemighty.github.io/DevDock/',
     size: 300,
     colorMode: 'unified',
@@ -95,18 +97,21 @@ export default function QrCodeGenerator() {
     dotStyle: 'rounded',
     outerEyeStyle: 'extra-rounded',
     innerEyeStyle: 'dot',
-    logo: '',
     logoSize: 0.25,
   });
+  // logo is session-only (base64 blobs can be multiple MB)
+  const [logo, setLogo] = useState('');
 
-  const set = <K extends keyof QrOptions>(key: K, val: QrOptions[K]) =>
+  const set = <K extends keyof QrOptions>(key: K, val: QrOptions[K]) => {
+    if (key === 'logo') { setLogo(val as string); return; }
     setOpts(prev => ({ ...prev, [key]: val }));
+  };
 
-  const buildQrConfig = (o: QrOptions) => ({
+  const buildQrConfig = (o: typeof opts, logoUrl: string) => ({
     width: o.size,
     height: o.size,
     data: o.text || ' ',
-    image: o.logo || undefined,
+    image: logoUrl || undefined,
     margin: 12,
     imageOptions: { crossOrigin: 'anonymous' as const, margin: 6, imageSize: o.logoSize, hideBackgroundDots: true },
     dotsOptions: { color: o.dotColor, type: o.dotStyle },
@@ -118,14 +123,14 @@ export default function QrCodeGenerator() {
   // Mount once
   useEffect(() => {
     if (!canvasRef.current) return;
-    qrRef.current = new QRCodeStyling(buildQrConfig(opts));
+    qrRef.current = new QRCodeStyling(buildQrConfig(opts, logo));
     qrRef.current.append(canvasRef.current);
   }, []);
 
-  // Update on option change
+  // Update on option/logo change
   useEffect(() => {
-    qrRef.current?.update(buildQrConfig(opts));
-  }, [opts]);
+    qrRef.current?.update(buildQrConfig(opts, logo));
+  }, [opts, logo]);
 
   const download = () => qrRef.current?.download({ name: 'devdock-qr', extension: 'png' });
 

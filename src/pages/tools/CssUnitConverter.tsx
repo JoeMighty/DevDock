@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Ruler, Copy } from 'lucide-react';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 const UNITS = ['px', 'rem', 'em', 'pt', 'vw', 'vh'] as const;
 type Unit = typeof UNITS[number];
@@ -29,10 +30,10 @@ function convert(value: number, from: Unit, rootPx: number, viewportW: number, v
 
 export default function CssUnitConverter() {
   const [value, setValue] = useState('16');
-  const [activeUnit, setActiveUnit] = useState<Unit>('px');
-  const [rootPx, setRootPx] = useState(16);
-  const [viewportW, setViewportW] = useState(1440);
-  const [viewportH, setViewportH] = useState(900);
+  const [activeUnit, setActiveUnit] = useLocalStorage<Unit>('devdock_cssunit_unit', 'px');
+  const [rootPx, setRootPx] = useLocalStorage<number>('devdock_cssunit_root', 16);
+  const [viewportW, setViewportW] = useLocalStorage<number>('devdock_cssunit_vpw', 1440);
+  const [viewportH, setViewportH] = useLocalStorage<number>('devdock_cssunit_vph', 900);
 
   const numVal = parseFloat(value) || 0;
   const conversions = convert(numVal, activeUnit, rootPx, viewportW, viewportH);

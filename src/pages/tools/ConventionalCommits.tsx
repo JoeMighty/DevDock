@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GitCommit, Copy, Check, GitBranch } from 'lucide-react';
 import { CompanionTool } from '@/components/CompanionTool';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 const TYPES = [
   { value: 'feat', label: 'feat', desc: 'A new feature', color: 'text-green-400' },
@@ -17,12 +18,12 @@ const TYPES = [
 ];
 
 export default function ConventionalCommits() {
-  const [type, setType] = useState('feat');
-  const [scope, setScope] = useState('');
-  const [breaking, setBreaking] = useState(false);
-  const [desc, setDesc] = useState('');
-  const [body, setBody] = useState('');
-  const [footer, setFooter] = useState('');
+  const [type, setType] = useLocalStorage('devdock_commits_type', 'feat');
+  const [scope, setScope] = useLocalStorage('devdock_commits_scope', '');
+  const [breaking, setBreaking] = useLocalStorage('devdock_commits_breaking', false);
+  const [desc, setDesc] = useLocalStorage('devdock_commits_desc', '');
+  const [body, setBody] = useLocalStorage('devdock_commits_body', '');
+  const [footer, setFooter] = useLocalStorage('devdock_commits_footer', '');
   const [copied, setCopied] = useState(false);
 
   const header = `${type}${scope ? `(${scope})` : ''}${breaking ? '!' : ''}: ${desc}`;

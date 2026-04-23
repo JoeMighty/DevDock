@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Palette, AlertTriangle, CheckCircle2, Sparkles, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export default function ColorChecker() {
-  const [fg, setFg] = useState('#FFFFFF');
-  const [bg, setBg] = useState('#6366F1');
+  const [fg, setFg] = useLocalStorage('devdock_checker_fg', '#FFFFFF');
+  const [bg, setBg] = useLocalStorage('devdock_checker_bg', '#6366F1');
 
   // Calculates contrast ratio using standard relative luminance formula
   const getLumanies = (hex: string) => {

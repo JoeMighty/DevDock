@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Tag, Copy, GitBranch } from 'lucide-react';
 import { CompanionTool } from '@/components/CompanionTool';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 function parseSemver(raw: string): { major: number; minor: number; patch: number; pre: string; build: string } | null {
   const m = raw.trim().replace(/^v/, '').match(/^(\d+)\.(\d+)\.(\d+)(?:-([^+]+))?(?:\+(.+))?$/);
@@ -13,7 +14,7 @@ function fmt(v: { major: number; minor: number; patch: number; pre?: string; bui
 }
 
 export default function SemverCalculator() {
-  const [input, setInput] = useState('1.3.0');
+  const [input, setInput] = useLocalStorage('devdock_semver_input', '1.3.0');
   const [copied, setCopied] = useState<string | null>(null);
 
   const copy = (val: string) => {

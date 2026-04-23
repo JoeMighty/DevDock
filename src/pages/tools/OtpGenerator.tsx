@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import * as OTPAuth from 'otpauth';
 import { KeyRound, Copy, RefreshCw, Check } from 'lucide-react';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 function generateSecret(): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
@@ -8,10 +9,10 @@ function generateSecret(): string {
 }
 
 export default function OtpGenerator() {
-  const [secret, setSecret] = useState(generateSecret);
-  const [digits, setDigits] = useState(6);
-  const [period, setPeriod] = useState(30);
-  const [algo, setAlgo] = useState<'SHA1' | 'SHA256' | 'SHA512'>('SHA1');
+  const [secret, setSecret] = useLocalStorage('devdock_otp_secret', generateSecret());
+  const [digits, setDigits] = useLocalStorage<number>('devdock_otp_digits', 6);
+  const [period, setPeriod] = useLocalStorage<number>('devdock_otp_period', 30);
+  const [algo, setAlgo] = useLocalStorage<'SHA1' | 'SHA256' | 'SHA512'>('devdock_otp_algo', 'SHA1');
   const [code, setCode] = useState('');
   const [remaining, setRemaining] = useState(0);
   const [error, setError] = useState('');

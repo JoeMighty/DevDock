@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { DatabaseZap, Copy, RefreshCw, Database } from 'lucide-react';
 import { format } from 'sql-formatter';
 import { CompanionTool } from '@/components/CompanionTool';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export default function SqlFormatter() {
   const [input, setInput] = useState(`SELECT u.id, u.name, o.total FROM users u LEFT JOIN orders o ON u.id=o.user_id WHERE o.total > 100 AND u.active=true ORDER BY o.total DESC LIMIT 50`);
   const [output, setOutput] = useState('');
-  const [dialect, setDialect] = useState<'sql' | 'postgresql' | 'mysql' | 'sqlite'>('sql');
+  const [dialect, setDialect] = useLocalStorage<'sql' | 'postgresql' | 'mysql' | 'sqlite'>('devdock_sql_dialect', 'sql');
   const [error, setError] = useState('');
 
   const formatSql = () => {
