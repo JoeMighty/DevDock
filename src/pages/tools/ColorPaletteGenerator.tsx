@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import { Palette, Copy, Check } from 'lucide-react';
+import { Palette, Copy, Check, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // ── Color math ──────────────────────────────────────────────────────────────
 function hexToHsl(hex: string): [number, number, number] {
@@ -95,9 +96,21 @@ export default function ColorPaletteGenerator() {
           <Palette className="w-6 h-6 text-primary" /> Color Palette Generator
         </h2>
       </div>
-      <p className="text-sm text-muted-foreground/80">
+      <p className="text-sm text-muted-foreground/80 mb-2">
         Input a base colour and generate harmonious palettes — from Tailwind-style shade scales to complementary, triadic, and tetradic harmony sets. Click any swatch to copy.
       </p>
+
+      <Link to="/tools/color"
+        className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-green-500/5 border border-green-500/20 hover:bg-green-500/10 hover:border-green-500/40 transition-all group mb-2">
+        <div className="flex items-center gap-3">
+          <div className="p-1.5 bg-green-500/10 rounded-lg"><CheckCircle2 className="w-4 h-4 text-green-400" /></div>
+          <div>
+            <div className="text-xs font-bold text-foreground">Pair with Color Contrast Checker</div>
+            <div className="text-[11px] text-muted-foreground">Pick colours from your palette and verify they meet WCAG AA/AAA accessibility standards.</div>
+          </div>
+        </div>
+        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-green-400 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+      </Link>
 
       <div className="flex items-center gap-4 bg-card border border-border rounded-xl p-4 shadow-sm">
         <div className="flex items-center gap-3 border border-border rounded-lg px-3 py-2 bg-background">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Palette, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Palette, AlertTriangle, CheckCircle2, Sparkles, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function ColorChecker() {
   const [fg, setFg] = useState('#FFFFFF');
@@ -38,9 +39,21 @@ export default function ColorChecker() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold flex items-center gap-2"><Palette className="w-6 h-6 text-primary" /> Color Contrast Checker</h2>
       </div>
-      <p className="text-sm text-muted-foreground/80 mb-4">
+      <p className="text-sm text-muted-foreground/80 mb-2">
         Ensure your designs meet WCAG accessibility guidelines by checking the contrast ratio between text and background colors.
       </p>
+
+      <Link to="/tools/palette"
+        className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-purple-500/5 border border-purple-500/20 hover:bg-purple-500/10 hover:border-purple-500/40 transition-all group mb-2">
+        <div className="flex items-center gap-3">
+          <div className="p-1.5 bg-purple-500/10 rounded-lg"><Sparkles className="w-4 h-4 text-purple-400" /></div>
+          <div>
+            <div className="text-xs font-bold text-foreground">Pair with Color Palette Generator</div>
+            <div className="text-[11px] text-muted-foreground">Generate a full shade scale and harmony sets, then test contrast here.</div>
+          </div>
+        </div>
+        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-purple-400 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+      </Link>
 
       <div className="flex flex-col md:flex-row gap-6 mb-8">
          <div className="flex flex-col flex-1 gap-2">
