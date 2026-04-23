@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Network, Copy, Check, RefreshCw } from 'lucide-react';
 import { CompanionTool } from '@/components/CompanionTool';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 function formatGraphQL(query: string): string {
   if (!query.trim()) return '';
