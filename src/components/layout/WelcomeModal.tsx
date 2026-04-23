@@ -15,8 +15,8 @@ const FEATURES = [
     icon: LayoutDashboard,
     color: 'from-blue-500/20 to-cyan-500/20 border-blue-500/20',
     iconColor: 'text-blue-400',
-    title: '46 Specialized Modules',
-    desc: 'SQL, Docker, JSON, QR, JWT, Regex, YAML, CSV, Markdown, ENV, Conventional Commits — all client-side.',
+    title: '61 Specialized Modules',
+    desc: 'SQL, Docker, JSON, RSA, Nginx, SVG to React, QR, JWT, Regex, YAML, CSV, Markdown, ENV — all client-side.',
   },
   {
     icon: ShieldCheck,
