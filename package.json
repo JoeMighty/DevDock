@@ -19,6 +19,7 @@
     "js-yaml": "^4.1.1",
     "lucide-react": "^1.8.0",
     "node-forge": "^1.4.0",
+    "qr-code-styling": "^1.9.2",
     "qrcode": "^1.5.4",
     "react": "^19.2.5",
     "react-diff-viewer-continued": "^4.2.0",
