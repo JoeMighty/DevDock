@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -50,6 +50,65 @@ export const TOOLS = [
 
 export function Sidebar() {
   const location = useLocation();
+  const categories = Array.from(new Set(TOOLS.map(t => t.category)));
+
+  // State
+  const [recents, setRecents] = useState<string[]>(() => {
+      try { return JSON.parse(localStorage.getItem('devdock_recents') || '[]'); } 
+      catch { return []; }
+  });
+
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  // Auto-expand category on initial render based on route
+  useEffect(() => {
+      const activeTool = TOOLS.find(t => t.path === location.pathname);
+      if (activeTool) {
+          setExpanded(prev => ({ ...prev, [activeTool.category]: true }));
+      }
+  }, [location.pathname]);
+
+  // Track Recents
+  useEffect(() => {
+      if (location.pathname === '/') return;
+      const validPaths = TOOLS.map(t => t.path);
+      if (!validPaths.includes(location.pathname)) return;
+
+      try {
+          const stored = JSON.parse(localStorage.getItem('devdock_recents') || '[]');
+          const updated = [location.pathname, ...stored.filter((p: string) => p !== location.pathname)].slice(0, 3);
+          localStorage.setItem('devdock_recents', JSON.stringify(updated));
+          setRecents(updated);
+      } catch {
+          // ignore parsing error
+      }
+  }, [location.pathname]);
+
+  const toggleCategory = (cat: string) => {
+      setExpanded(prev => ({ ...prev, [cat]: !prev[cat] }));
+  };
+
+  const renderToolLink = (tool: typeof TOOLS[0]) => {
+      const isActive = location.pathname === tool.path;
+      const Icon = tool.icon;
+      return (
+        <Link
+          key={tool.path}
+          to={tool.path}
+          className="relative flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all group overflow-hidden"
+        >
+          {isActive && (
+              <motion.div layoutId="sidebar-active" className="absolute inset-0 bg-primary/10 border border-primary/20 rounded-lg -z-10" />
+          )}
+          {!isActive && (
+              <div className="absolute inset-0 bg-muted/0 group-hover:bg-muted/30 transition-colors rounded-lg -z-10" />
+          )}
+          
+          <Icon className={cn("w-4 h-4 transition-colors", isActive ? "text-primary flex-shrink-0" : "text-muted-foreground group-hover:text-foreground flex-shrink-0")} />
+          <span className={cn("transition-colors truncate", isActive ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground")}>{tool.name}</span>
+        </Link>
+      );
+  };
 
   return (
     <aside className="w-64 border-r border-border/40 bg-background/30 backdrop-blur-xl h-full flex-shrink-0 flex flex-col pt-6 overflow-y-auto shadow-2xl z-20">
@@ -62,34 +121,60 @@ export function Sidebar() {
         </Link>
       </div>
       
-      <div className="px-4">
-        <div className="text-xs font-bold text-muted-foreground/80 mb-3 px-3 uppercase tracking-widest">
-          Toolkit
+      <div className="px-4 flex flex-col gap-2 pb-24">
+        
+        {/* Recents Block */}
+        {recents.length > 0 && (
+            <div className="mb-4">
+                <div className="text-[10px] font-bold text-muted-foreground/80 mb-2 px-3 uppercase tracking-widest flex items-center gap-2">
+                    <History className="w-3.5 h-3.5" /> Recently Used
+                </div>
+                <nav className="flex flex-col gap-1">
+                    {recents.map(path => {
+                        const tool = TOOLS.find(t => t.path === path);
+                        return tool ? renderToolLink(tool) : null;
+                    })}
+                </nav>
+            </div>
+        )}
+
+        {/* Categories Block */}
+        <div className="text-[10px] font-bold text-muted-foreground/80 mb-2 px-3 uppercase tracking-widest pt-2 border-t border-border/20">
+            Modules
         </div>
-        <nav className="flex flex-col gap-1.5 pb-20">
-          {TOOLS.map((tool) => {
-            const isActive = location.pathname === tool.path;
-            const Icon = tool.icon;
+        
+        {categories.map(cat => {
+            const isExpanded = expanded[cat];
+            const catTools = TOOLS.filter(t => t.category === cat);
             
             return (
-              <Link
-                key={tool.path}
-                to={tool.path}
-                className="relative flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all group overflow-hidden"
-              >
-                {isActive && (
-                    <motion.div layoutId="sidebar-active" className="absolute inset-0 bg-primary/10 border border-primary/20 rounded-lg -z-10" />
-                )}
-                {!isActive && (
-                    <div className="absolute inset-0 bg-muted/0 group-hover:bg-muted/30 transition-colors rounded-lg -z-10" />
-                )}
-                
-                <Icon className={cn("w-4 h-4 transition-colors", isActive ? "text-primary flex-shrink-0" : "text-muted-foreground group-hover:text-foreground flex-shrink-0")} />
-                <span className={cn("transition-colors truncate", isActive ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground")}>{tool.name}</span>
-              </Link>
+                <div key={cat} className="flex flex-col mb-1">
+                    <button 
+                        onClick={() => toggleCategory(cat)}
+                        className="flex items-center justify-between px-3 py-2 w-full rounded-lg hover:bg-muted/40 transition-colors group text-left"
+                    >
+                        <span className="text-xs font-bold text-foreground/80 group-hover:text-foreground">{cat}</span>
+                        <ChevronRight className={cn("w-3.5 h-3.5 text-muted-foreground transition-transform duration-200", isExpanded && "rotate-90")} />
+                    </button>
+                    
+                    <AnimatePresence>
+                        {isExpanded && (
+                            <motion.div 
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="overflow-hidden"
+                            >
+                                <nav className="flex flex-col gap-1 pt-1 pb-2">
+                                    {catTools.map(renderToolLink)}
+                                </nav>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
             );
-          })}
-        </nav>
+        })}
       </div>
 
       <div className="mt-auto px-6 pb-6 pt-4 border-t border-border/40 bg-background/50 backdrop-blur-md sticky bottom-0 z-10 w-full">
