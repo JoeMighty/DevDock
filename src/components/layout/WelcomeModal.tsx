@@ -55,8 +55,8 @@ export function WelcomeModal() {
                        <Database className="w-4 h-4 text-green-500" />
                     </div>
                     <div>
-                      <div className="font-bold text-sm text-foreground">25 Specialized Modules</div>
-                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Featuring advanced payloads like Docker Composers, Markdown Engines, Base64 Encoders, X.509 PEM Extractors, and JSON Diff algorithms.</div>
+                      <div className="font-bold text-sm text-foreground">35 Specialized Modules</div>
+                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Featuring SQL Formatters, QR Code Designers, Docker Composers, Markdown Engines, JSON Differ algorithms, and more — all client-side.</div>
                     </div>
                  </div>
                  <div className="flex items-start gap-4 p-3 rounded-xl hover:bg-muted/30 transition-colors">
@@ -65,7 +65,7 @@ export function WelcomeModal() {
                     </div>
                     <div>
                       <div className="font-bold text-sm text-foreground">Cybersecurity Suite</div>
-                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Leverage Zxcvbn entropy calculators, Bcrypt multi-round hash verifiers, and RegEx-powered PII Log Sanitizers offline.</div>
+                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Leverage Zxcvbn entropy calculators, Bcrypt multi-round hash verifiers, X.509 PEM Decoders, and RegEx-powered PII Log Sanitizers — all offline.</div>
                     </div>
                  </div>
                  <div className="flex items-start gap-4 p-3 rounded-xl hover:bg-muted/30 transition-colors">

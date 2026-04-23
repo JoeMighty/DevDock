@@ -1,8 +1,6 @@
 <div align="center">
-  <div style="background: linear-gradient(135deg, #4f46e5 0%, #a855f7 100%); padding: 1.5rem; border-radius: 1rem; margin-bottom: 1rem; display: inline-block;">
-    <h1 style="color: white; margin: 0; font-size: 3rem;">🚀 DevDock</h1>
-  </div>
-  <p><strong>The ultimate, lightning-fast developer toolkit. 25 offline utilities. Zero backend latency.</strong></p>
+  <h1>🚀 DevDock</h1>
+  <p><strong>The ultimate, lightning-fast developer toolkit. 35 offline utilities. Zero backend latency.</strong></p>
 
   <p>
     <img src="https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
@@ -19,9 +17,9 @@
 
 Designed with a premium glassmorphic Light/Dark aesthetic, DevDock acts as your personal engineering command center.
 
-## 🧰 The 25 Modules
+## 🧰 The 35 Modules
 
-The toolkit is categorized into 5 distinct disciplines:
+The toolkit is categorized into 6 distinct disciplines:
 
 ### 📊 Data & Text
 - **JSON to Table**: Instantly visualize, traverse, and export raw nested JSON to CSV.
@@ -31,11 +29,18 @@ The toolkit is categorized into 5 distinct disciplines:
 - **Encoder / Decoder**: Securely perform bidirectional string transformations via Hex or URI bounds.
 - **JSON Diff**: A dual-pane split-screen git-style engine for isolating node mutations.
 - **Base64 Encoder**: Drag & drop any asset to parse it instantly into a raw `data:image/x;base64` DOM string.
+- **CSV ↔ JSON**: Bidirectional conversion between CSV spreadsheet exports and JSON arrays.
+- **SQL Formatter**: Paste raw, minified SQL queries to apply consistent indentation and uppercase keywords across PostgreSQL, MySQL, and SQLite dialects.
+- **String Toolkit**: 12 naming convention converters in one panel — camelCase, snake_case, SCREAMING_SNAKE, slugify, reverse, and more.
+- **Lorem Ipsum**: Generate placeholder words, sentences, or paragraphs instantly for UI prototyping.
 
 ### 🌐 Web & Network
 - **API Request Tester**: Fire full HTTP protocols, manipulate Headers, bodies, and store local history logs.
 - **Sitemap Generator**: Dynamically format static URL tree parameters into ready-to-deploy `sitemap.xml` files.
 - **Uptime Monitor**: Actively ping and track the operational latency of critical server endpoints.
+- **URL Parser & Builder**: Decompose any URL into its components, visually edit query parameters, and rebuild the final URL.
+- **QR Code Designer**: Generate fully custom QR codes with configurable eye shapes, per-element colour overrides, data dot styles, and centre logo embedding.
+- **HTTP Status Codes**: A searchable, comprehensive reference for all standard HTTP response codes grouped by class.
 
 ### ⚙️ Architecture & Ops
 - **Docker Compose Builder**: A graphical form interface bounding network and container logic into strictly evaluated `js-yaml` configurations.
@@ -45,16 +50,21 @@ The toolkit is categorized into 5 distinct disciplines:
 ### 🛡️ Cybersecurity
 - **JWT Decoder**: Paste a JSON Web Token to seamlessly parse and expose Headers, Contexts, and valid expirations natively.
 - **Hash & UUID**: Quickly generate MD5, SHA-256 variants alongside UUIDv4.
-- **Password Analyzer & Generator**: Leverages the `zxcvbn` engine to calculate mathematical entropy or generates XKCD dictionary pass-phrases instantly.
+- **Password Analyzer & Generator**: Leverages `zxcvbn` to calculate mathematical entropy or generates XKCD dictionary passphrases with configurable length, symbols, and numbers.
 - **Log Sanitizer**: Leverages aggressive Regex to automatically strip specific PII constraints (IPv4, CC, Emails, MAC addresses) out of massive stack traces.
 - **CIDR Calculator**: Visual IP network subdivision calculation bounding exactly into mask notations and broadcast addresses.
 - **PEM Certificate Decoder**: Parses raw X.509 Base64 certificates stripping out Public Keys, Validity Windows, and Subjects securely offline.
 - **Bcrypt Hash Verifier**: Evaluates complex `$2a$` hash buffers asynchronously against plain-text predictions.
 
-### 🎨 Design & SDKs
+### 🔧 Dev Tools
 - **Regex Tester**: A playground engine for highlighting matched strings dynamically.
 - **Changelog Generator**: Construct standard Markdown sequential update release logs effortlessly.
 - **Database Schema Designer**: Map SQL relationship structures and auto-export them to raw DB code chunks.
+- **UUID / Nano ID Generator**: Generate cryptographically random UUID v4 or compact Nano IDs with configurable length — ideal for database primary keys and session tokens.
+- **Unix Timestamp Converter**: Bidirectional epoch converter — input a Unix timestamp to get a human date, or a date string to extract the epoch.
+- **Number Base Converter**: Convert numbers between Decimal, Binary, Octal, and Hexadecimal. Essential for bitmasking and reading memory dumps.
+
+### 🎨 Design & CSS
 - **Color Contrast Checker**: Verify WCAG (AA/AAA) bounds across UI color theory palettes.
 - **CSS Shadows & Gradients**: Visually render, layer, and extract perfect CSS styling syntax.
 
