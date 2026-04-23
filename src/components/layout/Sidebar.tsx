@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler, Sparkles, KeyRound, Tag, Settings, Code, Trash2, KeySquare, Wand2, FileCheck2, Bot, Sigma, Search, Type as TypeIcon, Loader2 } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler, Sparkles, KeyRound, Tag, Settings, Code, Trash2, KeySquare, Wand2, FileCheck2, Bot, Sigma, Search, Type as TypeIcon, Loader2, Server } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { version } from '../../../package.json';
@@ -68,7 +68,7 @@ export const TOOLS = [
   { name: 'Number Base', path: '/tools/number-base', icon: Binary, category: 'Dev Tools' },
   { name: '.gitignore Gen', path: '/tools/gitignore', icon: GitBranch, category: 'Dev Tools' },
   { name: 'curl → Fetch', path: '/tools/curl', icon: Terminal, category: 'Dev Tools' },
-  { name: 'SVG to React', path: '/tools/svg-to-react', icon: FileCode, category: 'Dev Tools', isNew: true },
+  { name: 'SVG to React', path: '/tools/svg-to-react', icon: FileCode2, category: 'Dev Tools', isNew: true },
   { name: 'JSON to Go', path: '/tools/json-to-go', icon: Code2, category: 'Dev Tools', isNew: true },
   { name: 'Conv. Commits', path: '/tools/commits', icon: GitCommit, category: 'Dev Tools' },
   { name: 'Semver Calc', path: '/tools/semver', icon: Tag, category: 'Dev Tools' },
