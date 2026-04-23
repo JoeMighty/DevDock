@@ -3,8 +3,8 @@
   <p><strong>The ultimate, lightning-fast developer toolkit. 51 offline utilities. Zero backend latency.</strong></p>
 
   <p>
-    <img src="https://img.shields.io/badge/version-1.6.0-6366f1?style=flat-square" alt="Version" />
-    <img src="https://img.shields.io/badge/tools-51-8b5cf6?style=flat-square" alt="Tools" />
+    <img src="https://img.shields.io/badge/version-1.7.0-6366f1?style=flat-square" alt="Version" />
+    <img src="https://img.shields.io/badge/tools-56-8b5cf6?style=flat-square" alt="Tools" />
     <img src="https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
     <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -15,9 +15,10 @@
 
 ## ✨ Overview
 
-**DevDock** is a web-based platform providing **51 highly specialized developer tools** in one beautifully unified, client-side interface. Stop relying on slow, ad-ridden web apps for your daily workflow. Everything inside DevDock runs instantly and privately in your browser — no backend, no telemetry.
+**DevDock** is a web-based platform providing **56 highly specialized developer tools** in one beautifully unified, client-side interface. Stop relying on slow, ad-ridden web apps for your daily workflow. Everything inside DevDock runs instantly and privately in your browser — no backend, no telemetry.
 
 Key features:
+- 🚀 **On-demand Loading** — Implemented code-splitting; tools only load when you need them.
 - **Companion Tool Network** — tools contextually suggest related utilities (e.g. curl → API Tester, Semver → Changelog, Hash → Bcrypt)
 - **Persistent Preferences** — colours, regex patterns, QR styles, OTP secrets and more are saved locally via `localStorage`
 - **Glassmorphic Light/Dark UI** — premium aesthetic powered by Framer Motion and Tailwind
@@ -43,6 +44,8 @@ Organized across 6 disciplines:
 | **YAML ↔ JSON** | Bidirectional conversion for Kubernetes, GitHub Actions, and Helm |
 | **Text Diff** | Line-by-line text comparison with split and unified views |
 | **XML Formatter** | Prettify or minify XML for SOAP APIs, Android manifests, and RSS feeds |
+| **GraphQL Formatter** | Prettify minified GraphQL queries and mutations |
+| **JSON Path Tester** | Test complex JSONPath expressions against JSON structures |
 
 ### 🌐 Web & Network
 | Tool | Description |
@@ -53,6 +56,7 @@ Organized across 6 disciplines:
 | **URL Parser & Builder** | Decompose URLs into components and visually edit query parameters |
 | **QR Code Designer** | Custom QR codes with eye shapes, colour overrides, and logo embedding |
 | **HTTP Status Codes** | Searchable reference for all standard HTTP response codes |
+| **Favicon Generator** | Create project icons and favicons in seconds |
 
 ### ⚙️ Architecture & Ops
 | Tool | Description |

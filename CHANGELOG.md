@@ -4,6 +4,25 @@ All notable changes to DevDock are documented here.
 
 ---
 
+## [1.7.0] — 2026-04-23
+
+### Added
+- ✨ **GraphQL Formatter** — Prettify minified GraphQL queries and mutations with proper indentation and multi-line selection sets.
+- ✨ **JSON Path Tester** — Test complex JSONPath expressions against JSON structures with live results.
+- ✨ **Typography Scale** — Generate mathematical typographic scales (Golden Ratio, Major Third, etc.) for harmonious UI design.
+- ✨ **SVG Optimiser** — Minify SVG code by removing metadata, comments, and unnecessary whitespace with live preview and savings stats.
+- ✨ **Favicon Generator** — Create project icons and favicons in seconds with custom text, colors, and border radius. Multiple download sizes (16x16 to 512x512).
+- 🚀 **Dynamic Code Splitting** — Implemented `React.lazy` and `Suspense`. Tools now load on-demand, reducing initial bundle size by ~90% and improving first-load performance.
+
+### Companion Tool Pairings Added
+- GraphQL Formatter → API Tester
+- JSON Path Tester → JSON to Table
+- Typography Scale → CSS Unit Converter
+- SVG Optimiser → Base64 Encoder
+- Favicon Generator → QR Code Designer
+
+---
+
 ## [1.6.0] — 2026-04-23
 
 ### Added

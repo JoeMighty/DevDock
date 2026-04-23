@@ -1,7 +1,7 @@
 {
   "name": "devdock",
   "private": true,
-  "version": "1.6.0",
+  "version": "1.7.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,7 +17,9 @@
     "convex": "^1.36.0",
     "crypto-js": "^4.2.0",
     "framer-motion": "^12.38.0",
+    "graphql": "^16.13.2",
     "js-yaml": "^4.1.1",
+    "jsonpath-plus": "^10.4.0",
     "lucide-react": "^1.8.0",
     "node-forge": "^1.4.0",
     "otpauth": "^9.5.0",

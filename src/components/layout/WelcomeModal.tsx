@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { version } from '../../../package.json';
 
 const STATS = [
-  { value: '51', label: 'Tools' },
+  { value: '56', label: 'Tools' },
   { value: '100%', label: 'Offline' },
   { value: '0ms', label: 'Latency' },
   { value: '6', label: 'Categories' },
