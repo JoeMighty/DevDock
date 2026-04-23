@@ -22,12 +22,17 @@ const itemVariants = {
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   
-  // Extract unique categories
   const categories = ['All', 'Data & Text', 'Web & Network', 'Architecture & Ops', 'Security', 'Dev Tools', 'Design & CSS'];
   
-  const filteredTools = activeCategory === 'All' 
+  const filtered = activeCategory === 'All' 
     ? TOOLS 
     : TOOLS.filter(t => t.category === activeCategory);
+
+  // New tools bubble to top
+  const filteredTools = [
+    ...filtered.filter(t => t.isNew),
+    ...filtered.filter(t => !t.isNew),
+  ];
 
   return (
     <div className="min-h-full flex flex-col pt-4 sm:pt-8 pb-12">
@@ -67,7 +72,7 @@ export default function HomePage() {
         variants={containerVariants} 
         initial="hidden" 
         animate="show" 
-        key={activeCategory} // Reset stagger animation on category change
+        key={activeCategory}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-max max-w-7xl mx-auto w-full pb-12"
       >
         <AnimatePresence mode='popLayout'>
@@ -85,7 +90,14 @@ export default function HomePage() {
                         <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
                           <Icon className="w-5 h-5 text-primary drop-shadow-sm" />
                         </div>
-                        <span className="text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-muted text-muted-foreground">{tool.category}</span>
+                        {/* Badge: New pill takes priority, otherwise show category */}
+                        {tool.isNew ? (
+                          <span className="flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary border border-primary/30 shadow-sm shadow-primary/20">
+                            <Sparkles className="w-2.5 h-2.5" /> New
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-muted text-muted-foreground">{tool.category}</span>
+                        )}
                     </div>
                     
                     <h3 className="font-bold text-base mb-1.5 text-card-foreground group-hover:text-primary transition-colors">{tool.name}</h3>

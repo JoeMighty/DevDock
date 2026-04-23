@@ -61,15 +61,15 @@ export const TOOLS = [
   { name: 'Number Base', path: '/tools/number-base', icon: Binary, category: 'Dev Tools' },
   { name: '.gitignore Gen', path: '/tools/gitignore', icon: GitBranch, category: 'Dev Tools' },
   { name: 'curl → Fetch', path: '/tools/curl', icon: Terminal, category: 'Dev Tools' },
-  { name: 'Conv. Commits', path: '/tools/commits', icon: GitCommit, category: 'Dev Tools' },
-  { name: 'Semver Calc', path: '/tools/semver', icon: Tag, category: 'Dev Tools' },
-  { name: 'ENV Formatter', path: '/tools/env', icon: Settings, category: 'Dev Tools' },
+  { name: 'Conv. Commits', path: '/tools/commits', icon: GitCommit, category: 'Dev Tools', isNew: true },
+  { name: 'Semver Calc', path: '/tools/semver', icon: Tag, category: 'Dev Tools', isNew: true },
+  { name: 'ENV Formatter', path: '/tools/env', icon: Settings, category: 'Dev Tools', isNew: true },
 
   // Design & CSS
   { name: 'Color Checker', path: '/tools/color', icon: Palette, category: 'Design & CSS' },
   { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush, category: 'Design & CSS' },
   { name: 'CSS Units', path: '/tools/css-units', icon: Ruler, category: 'Design & CSS' },
-  { name: 'Color Palette', path: '/tools/palette', icon: Sparkles, category: 'Design & CSS' },
+  { name: 'Color Palette', path: '/tools/palette', icon: Sparkles, category: 'Design & CSS', isNew: true },
 ];
 
 export function Sidebar() {
