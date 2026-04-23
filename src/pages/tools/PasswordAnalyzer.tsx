@@ -104,14 +104,18 @@ export default function PasswordAnalyzer() {
                            ))}
                       </div>
                       
-                      <div className="mt-4 grid grid-cols-2 gap-4">
-                           <div className="bg-card border border-border/50 p-4 rounded-xl">
-                               <div className="text-xs text-muted-foreground uppercase tracking-widest font-semibold mb-1">Guesses to crack</div>
-                               <div className="text-xl tracking-tight font-mono">{Number(result.guesses).toLocaleString()}</div>
+                      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                           <div className="bg-card border border-border/50 p-4 rounded-xl overflow-hidden">
+                               <div className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-1 opacity-60">Guesses to crack</div>
+                               <div className="text-lg sm:text-xl tracking-tight font-mono break-all leading-tight">
+                                   {Number(result.guesses).toLocaleString()}
+                               </div>
                            </div>
-                           <div className="bg-card border border-border/50 p-4 rounded-xl">
-                               <div className="text-xs text-muted-foreground uppercase tracking-widest font-semibold mb-1">Time to crack (Offline Fast)</div>
-                               <div className="text-xl tracking-tight font-mono text-primary/80">{result.crack_times_display.offline_fast_hashing_1e10_per_second}</div>
+                           <div className="bg-card border border-border/50 p-4 rounded-xl overflow-hidden">
+                               <div className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-1 opacity-60">Time to crack (Offline Fast)</div>
+                               <div className="text-lg sm:text-xl tracking-tight font-mono text-primary/80 break-words leading-tight">
+                                   {result.crack_times_display.offline_fast_hashing_1e10_per_second}
+                               </div>
                            </div>
                       </div>
                   </div>

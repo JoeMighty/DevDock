@@ -87,9 +87,16 @@ export const TOOLS = [
   { name: 'Color Name Finder', path: '/tools/color-name', icon: Palette, category: 'Design & CSS', isNew: true },
 ];
 
-export function Sidebar() {
+export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const location = useLocation();
   const categories = Array.from(new Set(TOOLS.map(t => t.category)));
+
+  // Auto-close sidebar on mobile navigation
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      onClose();
+    }
+  }, [location.pathname]);
 
   // State
   const [recents, setRecents] = useState<string[]>(() => {
@@ -157,14 +164,28 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="w-64 border-r border-border/40 bg-background/30 backdrop-blur-xl h-full flex-shrink-0 flex flex-col pt-6 overflow-y-auto shadow-2xl z-20">
-      <div className="px-6 pb-6 border-b border-border/40 mb-6">
-        <Link to="/" className="flex items-center gap-3 font-extrabold text-2xl text-foreground tracking-tight hover:opacity-80 transition-opacity">
-          <div className="bg-gradient-to-br from-primary to-purple-600 p-2 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+    <aside className={cn(
+        "fixed inset-y-0 left-0 w-64 border-r border-border/40 bg-background/30 backdrop-blur-xl h-full flex-shrink-0 flex flex-col pt-6 overflow-y-auto shadow-2xl z-50 transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:z-20",
+        isOpen ? "translate-x-0" : "-translate-x-full"
+    )}>
+      {/* Mobile Close Button */}
+      <button 
+        onClick={onClose}
+        className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground lg:hidden"
+      >
+        <X className="w-5 h-5" />
+      </button>
+
+      <div className="flex flex-col px-6 mb-8">
+        <div className="flex items-center gap-3 mb-1">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/30 flex-shrink-0">
             <LayoutDashboard className="w-5 h-5 text-white" />
           </div>
-          DevDock
-        </Link>
+          <div>
+            <h1 className="font-bold text-lg tracking-tight">DevDock</h1>
+            <p className="text-[10px] text-muted-foreground/60 font-semibold tracking-widest uppercase">Console</p>
+          </div>
+        </div>
       </div>
       
       <div className="px-4 flex flex-col gap-2 pb-24">

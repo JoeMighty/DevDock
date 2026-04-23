@@ -1,12 +1,4 @@
 <div align="center">
-  <p>
-    <a href="./README.md"><b>📖 README</b></a> | 
-    <a href="./CHANGELOG.md"><b>📜 CHANGELOG</b></a> | 
-    <a href="https://github.com/JoeMighty/DevDock/releases"><b>🚀 RELEASES</b></a>
-  </p>
-
-  <br />
-
   <h1>🚀 DevDock</h1>
   <p><strong>The ultimate, lightning-fast developer toolkit. 61 offline utilities. Zero backend latency.</strong></p>
 

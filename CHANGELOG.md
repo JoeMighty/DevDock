@@ -4,6 +4,16 @@ All notable changes to DevDock are documented here.
 
 ---
 
+## [1.8.1] — 2026-04-23
+
+### Fixed
+- 📱 **Mobile Responsiveness** — Implemented a hideable mobile sidebar with a menu toggle in the header.
+- 📐 **Layout Fixes** — Resolved clipping issues in the Password Analyzer and Welcome Modal on narrow screens.
+- 🧹 **Cleanup** — Removed experimental navigation tabs from README for a cleaner project root.
+- ✨ **UI Polish** — Improved stats row visibility and animations in the Welcome Modal.
+
+---
+
 ## [1.8.0] — 2026-04-23
 
 ### Added

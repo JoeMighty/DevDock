@@ -100,12 +100,19 @@ export function WelcomeModal() {
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-4 gap-2 mb-6">
-                {STATS.map(s => (
-                  <div key={s.label} className="bg-muted/30 border border-border/50 rounded-xl p-3 text-center">
-                    <div className="text-xl font-black text-foreground">{s.value}</div>
-                    <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest mt-0.5">{s.label}</div>
-                  </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                {STATS.map((s, i) => (
+                  <motion.div 
+                    key={s.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 + i * 0.05 }}
+                    className="relative group bg-muted/30 border border-border/50 rounded-2xl p-4 text-center hover:bg-muted/50 hover:border-primary/30 transition-all duration-300"
+                  >
+                    <div className="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="text-2xl font-black text-foreground tracking-tighter mb-0.5">{s.value}</div>
+                    <div className="text-[9px] font-extrabold text-muted-foreground uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity">{s.label}</div>
+                  </motion.div>
                 ))}
               </div>
 
