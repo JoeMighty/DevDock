@@ -228,14 +228,14 @@ export default function QrCodeGenerator() {
                 className="flex items-center gap-2 px-4 py-2 bg-muted/50 hover:bg-muted border border-border rounded-lg text-sm font-bold transition-colors">
                 <Upload className="w-4 h-4" /> Upload Logo
               </button>
-              {opts.logo && (
-                <button onClick={() => set('logo', '')}
+              {logo && (
+                <button onClick={() => setLogo('')}
                   className="flex items-center gap-1.5 px-3 py-2 text-destructive bg-destructive/10 hover:bg-destructive/20 border border-destructive/20 rounded-lg text-sm font-bold transition-colors">
                   <X className="w-4 h-4" /> Remove
                 </button>
               )}
             </div>
-            {opts.logo && (
+            {logo && (
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Logo Size</label>
