@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint, ChevronRight, History, Table2, Binary, CalendarClock, Link2, QrCode, ServerCrash, AlignLeft, Dices, CaseSensitive, ArrowLeftRight, GitCompare, GitBranch, Terminal, Ruler, Sparkles, KeyRound, Tag, Settings, Code } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { version } from '../../../package.json';
@@ -27,6 +27,7 @@ export const TOOLS = [
   { name: 'Lorem Ipsum', path: '/tools/lorem', icon: AlignLeft, category: 'Data & Text' },
   { name: 'YAML ↔ JSON', path: '/tools/yaml', icon: ArrowLeftRight, category: 'Data & Text' },
   { name: 'Text Diff', path: '/tools/text-diff', icon: GitCompare, category: 'Data & Text' },
+  { name: 'XML Formatter', path: '/tools/xml', icon: Code, category: 'Data & Text' },
 
   // Web & Network
   { name: 'API Tester', path: '/tools/api-tester', icon: Network, category: 'Web & Network' },
@@ -49,6 +50,7 @@ export const TOOLS = [
   { name: 'CIDR Calculator', path: '/tools/cidr', icon: Shield, category: 'Security' },
   { name: 'PEM Decoder', path: '/tools/pem', icon: ShieldHalf, category: 'Security' },
   { name: 'Bcrypt Verifier', path: '/tools/bcrypt', icon: Fingerprint, category: 'Security' },
+  { name: 'OTP / TOTP Gen', path: '/tools/otp', icon: KeyRound, category: 'Security' },
 
   // Dev Tools
   { name: 'Regex Tester', path: '/tools/regex', icon: Regex, category: 'Dev Tools' },
@@ -59,11 +61,15 @@ export const TOOLS = [
   { name: 'Number Base', path: '/tools/number-base', icon: Binary, category: 'Dev Tools' },
   { name: '.gitignore Gen', path: '/tools/gitignore', icon: GitBranch, category: 'Dev Tools' },
   { name: 'curl → Fetch', path: '/tools/curl', icon: Terminal, category: 'Dev Tools' },
+  { name: 'Conv. Commits', path: '/tools/commits', icon: GitCommit, category: 'Dev Tools' },
+  { name: 'Semver Calc', path: '/tools/semver', icon: Tag, category: 'Dev Tools' },
+  { name: 'ENV Formatter', path: '/tools/env', icon: Settings, category: 'Dev Tools' },
 
   // Design & CSS
   { name: 'Color Checker', path: '/tools/color', icon: Palette, category: 'Design & CSS' },
   { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush, category: 'Design & CSS' },
   { name: 'CSS Units', path: '/tools/css-units', icon: Ruler, category: 'Design & CSS' },
+  { name: 'Color Palette', path: '/tools/palette', icon: Sparkles, category: 'Design & CSS' },
 ];
 
 export function Sidebar() {

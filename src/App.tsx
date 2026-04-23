@@ -48,6 +48,14 @@ import GitignoreGenerator from '@/pages/tools/GitignoreGenerator';
 import CurlConverter from '@/pages/tools/CurlConverter';
 import CssUnitConverter from '@/pages/tools/CssUnitConverter';
 
+// v1.4.0 Tools
+import ColorPaletteGenerator from '@/pages/tools/ColorPaletteGenerator';
+import OtpGenerator from '@/pages/tools/OtpGenerator';
+import ConventionalCommits from '@/pages/tools/ConventionalCommits';
+import SemverCalculator from '@/pages/tools/SemverCalculator';
+import EnvFormatter from '@/pages/tools/EnvFormatter';
+import XmlFormatter from '@/pages/tools/XmlFormatter';
+
 function App() {
   return (
     <Router>
@@ -97,6 +105,13 @@ function App() {
           <Route path="/tools/gitignore" element={<GitignoreGenerator />} />
           <Route path="/tools/curl" element={<CurlConverter />} />
           <Route path="/tools/css-units" element={<CssUnitConverter />} />
+
+          <Route path="/tools/palette" element={<ColorPaletteGenerator />} />
+          <Route path="/tools/otp" element={<OtpGenerator />} />
+          <Route path="/tools/commits" element={<ConventionalCommits />} />
+          <Route path="/tools/semver" element={<SemverCalculator />} />
+          <Route path="/tools/env" element={<EnvFormatter />} />
+          <Route path="/tools/xml" element={<XmlFormatter />} />
         </Routes>
       </AppLayout>
     </Router>

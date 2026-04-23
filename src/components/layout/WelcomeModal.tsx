@@ -55,8 +55,8 @@ export function WelcomeModal() {
                        <Database className="w-4 h-4 text-green-500" />
                     </div>
                     <div>
-                      <div className="font-bold text-sm text-foreground">35 Specialized Modules</div>
-                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Featuring SQL Formatters, QR Code Designers, Docker Composers, Markdown Engines, JSON Differ algorithms, and more — all client-side.</div>
+                      <div className="font-bold text-sm text-foreground">46 Specialized Modules</div>
+                      <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">Featuring SQL Formatters, QR Code Designers, Docker Composers, Markdown Engines, JSON/XML/YAML processors, Conventional Commit builders — all client-side.</div>
                     </div>
                  </div>
                  <div className="flex items-start gap-4 p-3 rounded-xl hover:bg-muted/30 transition-colors">
