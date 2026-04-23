@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf } from 'lucide-react';
+import { LayoutDashboard, FileJson, Clock, GitCommit, Network, Paintbrush, Database, Key, Regex, FileCode2, Palette, FileEdit, Hash, Code2, DatabaseZap, ShieldCheck, ShieldAlert, Shield, ShieldHalf, SplitSquareHorizontal, UploadCloud, Container, LockKeyhole, Fingerprint } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
@@ -14,19 +14,23 @@ const GithubIcon = ({ className }: { className?: string }) => (
 export const TOOLS = [
   // Data & Text
   { name: 'JSON to Table', path: '/tools/json-to-table', icon: FileJson, category: 'Data & Text' },
-  { name: 'HTML to JSX', path: '/tools/html-to-jsx', icon: Code2, category: 'Data & Text' },
+  { name: 'HTML to JSX', path: '/tools/html-to-jsx', icon: FileCode2, category: 'Data & Text' },
   { name: 'Mock Data Gen', path: '/tools/mock-data', icon: DatabaseZap, category: 'Data & Text' },
   { name: 'Markdown Editor', path: '/tools/markdown', icon: FileEdit, category: 'Data & Text' },
-  { name: 'Encoder/Decoder', path: '/tools/encoder', icon: FileCode2, category: 'Data & Text' },
+  { name: 'Encoder/Decoder', path: '/tools/encoder', icon: Code2, category: 'Data & Text' },
+  { name: 'JSON Diff', path: '/tools/json-diff', icon: SplitSquareHorizontal, category: 'Data & Text' },
+  { name: 'Base64 Encoder', path: '/tools/base64', icon: UploadCloud, category: 'Data & Text' },
+
   // Web & Network
   { name: 'API Tester', path: '/tools/api-tester', icon: Network, category: 'Web & Network' },
-  { name: 'Sitemap Gen', path: '/tools/sitemap', icon: Network, category: 'Web & Network' },
+  { name: 'Sitemap Gen', path: '/tools/sitemap', icon: GitCommit, category: 'Web & Network' },
   { name: 'Uptime Monitor', path: '/tools/uptime', icon: Clock, category: 'Web & Network' },
-  { name: 'Cron Gen', path: '/tools/cron', icon: Clock, category: 'Web & Network' },
-  // Dev Tools
-  { name: 'Regex Tester', path: '/tools/regex', icon: Regex, category: 'Dev Tools' },
-  { name: 'Changelog Gen', path: '/tools/changelog', icon: GitCommit, category: 'Dev Tools' },
-  { name: 'Schema Designer', path: '/tools/schema', icon: Database, category: 'Dev Tools' },
+
+  // Architecture & Ops
+  { name: 'Docker Builder', path: '/tools/docker', icon: Container, category: 'Architecture & Ops' },
+  { name: 'Chmod Calc', path: '/tools/chmod', icon: LockKeyhole, category: 'Architecture & Ops' },
+  { name: 'Cron Gen', path: '/tools/cron', icon: Clock, category: 'Architecture & Ops' },
+
   // Security
   { name: 'JWT Decoder', path: '/tools/jwt', icon: Key, category: 'Security' },
   { name: 'Hash & UUID', path: '/tools/hash', icon: Hash, category: 'Security' },
@@ -34,7 +38,12 @@ export const TOOLS = [
   { name: 'Log Sanitizer', path: '/tools/sanitizer', icon: ShieldAlert, category: 'Security' },
   { name: 'CIDR Calculator', path: '/tools/cidr', icon: Shield, category: 'Security' },
   { name: 'PEM Decoder', path: '/tools/pem', icon: ShieldHalf, category: 'Security' },
-  // Design & CSS
+  { name: 'Bcrypt Verifier', path: '/tools/bcrypt', icon: Fingerprint, category: 'Security' },
+
+  // Design & SDKs
+  { name: 'Regex Tester', path: '/tools/regex', icon: Regex, category: 'Dev Tools' },
+  { name: 'Changelog Gen', path: '/tools/changelog', icon: GitCommit, category: 'Dev Tools' },
+  { name: 'Schema Designer', path: '/tools/schema', icon: Database, category: 'Dev Tools' },
   { name: 'Color Checker', path: '/tools/color', icon: Palette, category: 'Design & CSS' },
   { name: 'CSS Gen', path: '/tools/css-gen', icon: Paintbrush, category: 'Design & CSS' },
 ];

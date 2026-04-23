@@ -23,7 +23,7 @@ export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   
   // Extract unique categories
-  const categories = ['All', ...Array.from(new Set(TOOLS.map(t => t.category)))];
+  const categories = ['All', 'Architecture & Ops', 'Data & Text', 'Web & Network', 'Security', 'Dev Tools', 'Design & CSS'];
   
   const filteredTools = activeCategory === 'All' 
     ? TOOLS 

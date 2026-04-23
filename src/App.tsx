@@ -22,6 +22,13 @@ import CidrCalculator from '@/pages/tools/CidrCalculator';
 import LogSanitizer from '@/pages/tools/LogSanitizer';
 import PemDecoder from '@/pages/tools/PemDecoder';
 
+// Architecture Expansion
+import DockerBuilder from '@/pages/tools/DockerBuilder';
+import ChmodCalculator from '@/pages/tools/ChmodCalculator';
+import JsonDiff from '@/pages/tools/JsonDiff';
+import Base64Encoder from '@/pages/tools/Base64Encoder';
+import BcryptVerifier from '@/pages/tools/BcryptVerifier';
+
 function App() {
   return (
     <Router>
@@ -48,6 +55,12 @@ function App() {
           <Route path="/tools/cidr" element={<CidrCalculator />} />
           <Route path="/tools/sanitizer" element={<LogSanitizer />} />
           <Route path="/tools/pem" element={<PemDecoder />} />
+          
+          <Route path="/tools/docker" element={<DockerBuilder />} />
+          <Route path="/tools/chmod" element={<ChmodCalculator />} />
+          <Route path="/tools/json-diff" element={<JsonDiff />} />
+          <Route path="/tools/base64" element={<Base64Encoder />} />
+          <Route path="/tools/bcrypt" element={<BcryptVerifier />} />
         </Routes>
       </AppLayout>
     </Router>
